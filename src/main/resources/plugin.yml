@@ -1,0 +1,7 @@
+name: ChocoHills
+author: zwrumpy
+main: me.zwrumpy.chocohills.ChocoHills
+version: ${project.version}
+api-version: 1.17
+depend:
+- Slimefun
