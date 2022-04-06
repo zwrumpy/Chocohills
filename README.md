@@ -1,16 +1,24 @@
 
 # Chocohills
 
-**Arfy Fetch Up and Down** -
-transfer item of vanilla storage
 
-**Keima Importer** -
-transfer item from  Vanilla storage to SF machine input
+##Item Transporters
+  **Arfy Fetch Up and Down**
+  fast item transfer of vanilla storage
 
-**Keima Exporter** -
-transfer item from SF machine ouput to Vanilla storage
+  **Keima Importer**
+  transfer item from  Vanilla storage to SF machine input
 
-**Choco Crystal** -
-basic recipe item
+  **Keima Exporter**
+  transfer item from SF machine ouput to Vanilla storage
 
-**Blastxel** - upgradable blast mining tool
+
+##Tools
+  **Choco Crystal**
+  basic recipe item
+
+  **Torchtillas*
+  unlimited night vision torch
+
+  **Blastxel**
+  upgradable blast mining tool
