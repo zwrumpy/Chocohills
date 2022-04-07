@@ -131,7 +131,7 @@ public class ItemTransfer {
         BlockMenu outputInv = BlockStorage.getInventory(outputBlock);
 
         if (inputInv == null) {return;}
-        if (outputInv == null){return;}
+        if (outputInv == null) {return;}
         if (inputInv.isEmpty()) {return;}
 
         int[] slots = outputInv.getPreset().getSlotsAccessedByItemTransport(outputInv, ItemTransportFlow.INSERT, null);

@@ -26,11 +26,13 @@ public class ChocoItems {
             "BLASTXEL",
             Material.NETHERITE_PICKAXE,
             "&7&lBlastxel",
-            "&7Use:",
-            "&fFaster Breaking Blocks",
+            "After grueling mining of mining",
+            "wooferite inside woof clan mountains",
+            "Keima the blacksmith",
+            "forged blastxel from ancient wooferite ore",
             "",
             "&7Ability:",
-            "&fBlast Blocks: 3x1x3"
+            "&fBlast Mine Blocks: 3x1x3"
     );
 
     public static final SlimefunItemStack BLASTXEL_2 = new SlimefunItemStack(
@@ -41,7 +43,7 @@ public class ChocoItems {
             "&fFaster Breaking Blocks",
             "",
             "&7Ability:",
-            "&fBlast Blocks: 3x2x3"
+            "&fBlast Mine Blocks: 3x2x3"
     );
 
     public static final SlimefunItemStack BLASTXEL_3 = new SlimefunItemStack(
@@ -52,7 +54,7 @@ public class ChocoItems {
             "&fFaster Breaking Blocks",
             "",
             "&7Ability:",
-            "&fBlast Blocks: 3x3x3"
+            "&fBlast Mine Blocks: 3x3x3"
     );
 
     public static final SlimefunItemStack CHOCO_CRYSTAL = new SlimefunItemStack(
@@ -105,9 +107,12 @@ public class ChocoItems {
             "ARFWOOFERITE",
             Material.ANCIENT_DEBRIS,
             "&4&lArf Wooferite Gen",
-            "&7Use",
-            "&fNetherite Genenerator",
-            "",
+            "&fDr. Arf discovered wooferite",
+            "&funder boneloo shrine",
+            "of woof clan",
+            " ",
+            "&fUsage:",
+            "&fNetherite Generator",
             "&7Rate: &f1 &7netherite ingot",
             "&7Time: &f5 &7minutes"
     );
@@ -241,7 +246,7 @@ public class ChocoItems {
     );
 
     public static final SlimefunItemStack BAAM_PLACEXEL = new SlimefunItemStack(
-            "BAAM_BRUSH ",
+            "BAAM_PLACEXEL ",
             Material.TORCH,
             "&4Baam Brush",
             "Use: ",
@@ -254,6 +259,7 @@ public class ChocoItems {
             Material.TORCH,
             "&4Baam Bot",
             "Use: ",
+            "Tireless bot that can remove blocks",
             "block placer",
             "5 seconds"
     );
@@ -280,7 +286,12 @@ public class ChocoItems {
             "YANYAN_AXE",
             Material.DIAMOND_AXE,
             "&4YanYan Axe",
-            "&c+20% Choco"
+            "Very hungry little axe",
+            "eats chococrystal and poop into",
+            "concentrated energy",
+            " ",
+            "One hit enemy"
+
     );
 
     public static final SlimefunItemStack SHIRODEX = new SlimefunItemStack(
