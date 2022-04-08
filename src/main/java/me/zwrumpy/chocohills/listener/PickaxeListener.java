@@ -74,8 +74,8 @@ public class PickaxeListener implements Listener {
 
         int level = 1;
 
-        if (sfItem.getId().contains("BLASTXEL_2")) level = 2;
-        if (sfItem.getId().contains("BLASTXEL_3")) level = 3;
+        if (sfItem.getId().contains("BLASTXEL_2")) level = 3;
+        if (sfItem.getId().contains("BLASTXEL_3")) level = 6;
 
         Player player = e.getPlayer();
         Block block = e.getBlock();

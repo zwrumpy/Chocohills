@@ -25,7 +25,7 @@ public class ChocoItems {
     public static final SlimefunItemStack BLASTXEL = new SlimefunItemStack(
             "BLASTXEL",
             Material.NETHERITE_PICKAXE,
-            "&7&lBlastxel",
+            "&7&lBlastxel 1x",
             "After grueling mining of mining",
             "wooferite inside woof clan mountains",
             "Keima the blacksmith",
@@ -38,23 +38,23 @@ public class ChocoItems {
     public static final SlimefunItemStack BLASTXEL_2 = new SlimefunItemStack(
             "BLASTXEL_2",
             Material.NETHERITE_PICKAXE,
-            "&7&lBlastxel_2",
-            "&7Use:",
-            "&fFaster Breaking Blocks",
-            "",
-            "&7Ability:",
-            "&fBlast Mine Blocks: 3x2x3"
-    );
-
-    public static final SlimefunItemStack BLASTXEL_3 = new SlimefunItemStack(
-            "BLASTXEL_3",
-            Material.NETHERITE_PICKAXE,
-            "&7&lBlastxel_3",
+            "&7&lBlastxel 3x",
             "&7Use:",
             "&fFaster Breaking Blocks",
             "",
             "&7Ability:",
             "&fBlast Mine Blocks: 3x3x3"
+    );
+
+    public static final SlimefunItemStack BLASTXEL_3 = new SlimefunItemStack(
+            "BLASTXEL_3",
+            Material.NETHERITE_PICKAXE,
+            "&7&lBlastxel 6x",
+            "&7Use:",
+            "&fFaster Breaking Blocks",
+            "",
+            "&7Ability:",
+            "&fBlast Mine Blocks: 3x6x3"
     );
 
     public static final SlimefunItemStack CHOCO_CRYSTAL = new SlimefunItemStack(
@@ -123,15 +123,15 @@ public class ChocoItems {
     public static final SlimefunItemStack ARFBON = new SlimefunItemStack(
             "ARFBON",
             Material.BASALT,
-            "Arfbon Generator",
+            "&8&lArfbon Generator",
             "&4&lUpon discovery of wooferite",
-            "Dr Arf exprimented then formulate new ways",
-            "to use this material and developed new arfbon",
+            "&fDr Arf exprimented after formulate new ways",
+            "&fto use this material and developed new arfbon",
             " ",
             "&fUsage:",
             "&fCarbon Generator",
             "&7Rate: &f1 &7carbon",
-            "&7Time: &f1 &&7minute",
+            "&7Time: &f1 &7second",
             "&7Setup:",
             "&fPlace Chest on top of this block"
     );

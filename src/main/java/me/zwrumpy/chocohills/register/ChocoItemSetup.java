@@ -157,7 +157,7 @@ public class ChocoItemSetup {
                 }
         )
                 .setItem(SlimefunItems.CARBON)
-                .setRate(1, 60)
+                .setRate(1, 1)
                 .register(addon);
     }
 
