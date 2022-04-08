@@ -64,6 +64,7 @@ public class PickaxeListener implements Listener {
         if (!this.blockfaceMap.containsKey(e.getPlayer())) return;
         log("break 0");
         SlimefunItem sfItem = SlimefunItem.getByItem(e.getPlayer().getInventory().getItemInMainHand());
+
         if (sfItem == null) return;
         if (!sfItem.getId().contains("BLASTXEL")) {
             this.blockfaceMap.remove(e.getPlayer());
@@ -72,6 +73,7 @@ public class PickaxeListener implements Listener {
         log("break 1");
 
         int level = 1;
+
         if (sfItem.getId().contains("BLASTXEL_2")) level = 2;
         if (sfItem.getId().contains("BLASTXEL_3")) level = 3;
 

@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -50,30 +51,42 @@ public class MaterialGenerator extends SlimefunItem {
         });
     }
 
-    public void tick(@Nonnull Block b) {
+    @Override
+    public boolean useVanillaBlockBreaking() {
+        return super.useVanillaBlockBreaking();
+    }
 
+    public void tick(@Nonnull Block b) {
         Block targetBlock = b.getRelative(BlockFace.UP);
-        if (targetBlock.getType() == Material.CHEST) {
-            BlockState state = PaperLib.getBlockState(targetBlock, false).getState();
-            if (state instanceof InventoryHolder) {
-                Inventory inv = ((InventoryHolder) state).getInventory();
-                if (inv.firstEmpty() != -1) {
-                    final BlockPosition pos = new BlockPosition(b);
-                    int progress = generatorProgress.getOrDefault(pos, 0);
-                    if (progress >= this.rate) {
-                        progress = 0;
-                        inv.addItem(this.item);
-                    } else {
-                        progress++;
-                    }
-                    generatorProgress.put(pos, progress);
-                }
+        if (targetBlock.getType() != Material.CHEST) return;
+
+        BlockState state = PaperLib.getBlockState(targetBlock, false).getState();
+        if (!(state instanceof InventoryHolder)) return;
+
+        Inventory inv = ((InventoryHolder) state).getInventory();
+
+        if (inv.firstEmpty() != -1) {
+            final BlockPosition pos = new BlockPosition(b);
+            int progress = generatorProgress.getOrDefault(pos, 0);
+
+            if (progress >= this.rate) {
+                progress = 0;
+                inv.addItem(this.item);
+            } else {
+                progress++;
             }
+            generatorProgress.put(pos, progress);
         }
+
     }
 
     public final MaterialGenerator setItem(@Nonnull Material material) {
         this.item = new ItemStack(material);
+        return this;
+    }
+
+    public final MaterialGenerator setItem(@Nonnull SlimefunItemStack item) {
+        this.item = item;
         return this;
     }
 

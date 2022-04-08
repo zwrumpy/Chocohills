@@ -145,8 +145,19 @@ public class ChocoItemSetup {
                         null, ChocoItems.TORCHTILLAS, null
                 }
         )
-                .setItem(Material.NETHERITE_INGOT)
+                .setItem(SlimefunItems.CARBON)
                 .setRate(1, 300)
+                .register(addon);
+
+        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        null, ChocoItems.ARFWOOFERITE, null,
+                        SlimefunItems.CARBON, SlimefunItems.ENERGIZED_CAPACITOR,  SlimefunItems.CARBON,
+                        null, ChocoItems.TORCHTILLAS, null
+                }
+        )
+                .setItem(SlimefunItems.CARBON)
+                .setRate(1, 60)
                 .register(addon);
     }
 

@@ -109,12 +109,31 @@ public class ChocoItems {
             "&4&lArf Wooferite Gen",
             "&fDr. Arf discovered wooferite",
             "&funder boneloo shrine",
-            "of woof clan",
+            "&fof woof clan",
             " ",
             "&fUsage:",
             "&fNetherite Generator",
             "&7Rate: &f1 &7netherite ingot",
-            "&7Time: &f5 &7minutes"
+            "&7Time: &f5 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack ARFBON = new SlimefunItemStack(
+            "ARFBON",
+            Material.BASALT,
+            "Arfbon Generator",
+            "&4&lUpon discovery of wooferite",
+            "Dr Arf exprimented then formulate new ways",
+            "to use this material and developed new arfbon",
+            " ",
+            "&fUsage:",
+            "&fCarbon Generator",
+            "&7Rate: &f1 &7carbon",
+            "&7Time: &f1 &&7minute",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
     );
 
     public static final SlimefunItemStack KEIMAEXPORTER = new SlimefunItemStack(
