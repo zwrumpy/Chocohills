@@ -55,7 +55,7 @@ public class PickaxeListener implements Listener {
             this.blockfaceMap.put(e.getPlayer(), e.getBlockFace());
             log("face 0");
         }
-        log("face 1");
+        log("face 1 test");
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
