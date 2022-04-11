@@ -86,6 +86,12 @@ public class ChocoItemSetup {
                 SlimefunItems.ENERGIZED_CAPACITOR, new ItemStack(Material.NETHER_STAR), SlimefunItems.ENERGIZED_CAPACITOR,
                 ChocoItems.CHOCO_CRYSTAL_X2, null, ChocoItems.CHOCO_CRYSTAL_X2
         });
+
+        registerResource(ChocoItems.CHOCO_CARBON, new ItemStack[]{
+                ChocoItems.CHOCO_CRYSTAL, null, ChocoItems.CHOCO_CRYSTAL,
+                SlimefunItems.CARBON, new ItemStack(Material.DRAGON_EGG), SlimefunItems.CARBON,
+                ChocoItems.CHOCO_CRYSTAL, null, ChocoItems.CHOCO_CRYSTAL
+        });
     }
 
     void machines() {
@@ -145,15 +151,15 @@ public class ChocoItemSetup {
                         null, ChocoItems.TORCHTILLAS, null
                 }
         )
-                .setItem(SlimefunItems.CARBON)
+                .setItem(Material.NETHERITE_INGOT)
                 .setRate(1, 300)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
-                        null, ChocoItems.ARFWOOFERITE, null,
-                        SlimefunItems.CARBON, SlimefunItems.ENERGIZED_CAPACITOR,  SlimefunItems.CARBON,
-                        null, ChocoItems.TORCHTILLAS, null
+                        null,SlimefunItems.ENERGIZED_CAPACITOR, null,
+                        SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
+                        ChocoItems.CHOCO_CARBON, ChocoItems.TORCHTILLAS, ChocoItems.CHOCO_CARBON
                 }
         )
                 .setItem(SlimefunItems.CARBON)

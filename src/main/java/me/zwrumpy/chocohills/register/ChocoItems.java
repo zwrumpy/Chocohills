@@ -4,9 +4,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.NestedItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.SubItemGroup;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.zwrumpy.chocohills.ChocoHills;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.persistence.PersistentDataContainer;
 
 public class ChocoItems {
 
@@ -26,10 +30,10 @@ public class ChocoItems {
             "BLASTXEL",
             Material.NETHERITE_PICKAXE,
             "&7&lBlastxel 1x",
-            "After grueling mining of mining",
-            "wooferite inside woof clan mountains",
-            "Keima the blacksmith",
-            "forged blastxel from ancient wooferite ore",
+            "&7After grueling months of mining",
+            "&7wooferite inside woof clan mountains",
+            "&7Keima the blacksmith",
+            "&7forged blastxel from ancient wooferite ore",
             "",
             "&7Ability:",
             "&fBlast Mine Blocks: 3x1x3"
@@ -55,6 +59,14 @@ public class ChocoItems {
             "",
             "&7Ability:",
             "&fBlast Mine Blocks: 3x6x3"
+    );
+
+    public static final SlimefunItemStack CHOCO_CARBON = new SlimefunItemStack(
+            "CHOCO_CARBON",
+            Material.BASALT,
+            "&e&lChoco Carbon",
+            "&fAltered wooferite",
+            ""
     );
 
     public static final SlimefunItemStack CHOCO_CRYSTAL = new SlimefunItemStack(
@@ -111,7 +123,7 @@ public class ChocoItems {
             "&funder boneloo shrine",
             "&fof woof clan",
             " ",
-            "&fUsage:",
+            "&7Usage:",
             "&fNetherite Generator",
             "&7Rate: &f1 &7netherite ingot",
             "&7Time: &f5 &7minutes",
@@ -124,14 +136,15 @@ public class ChocoItems {
             "ARFBON",
             Material.BASALT,
             "&8&lArfbon Generator",
-            "&4&lUpon discovery of wooferite",
+            "&fUpon discovery of wooferite",
             "&fDr Arf exprimented after formulate new ways",
             "&fto use this material and developed new arfbon",
             " ",
-            "&fUsage:",
+            "&7Usage:",
             "&fCarbon Generator",
             "&7Rate: &f1 &7carbon",
             "&7Time: &f1 &7second",
+            " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"
     );
