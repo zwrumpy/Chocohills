@@ -80,12 +80,24 @@ public class MaterialGenerator extends SlimefunItem {
 
     }
 
+    public final MaterialGenerator setItem(@Nonnull Material material, int amount) {
+        this.item = new ItemStack(material, amount);
+        return this;
+    }
+
     public final MaterialGenerator setItem(@Nonnull Material material) {
         this.item = new ItemStack(material);
         return this;
     }
 
-    public final MaterialGenerator setItem(@Nonnull SlimefunItemStack item) {
+    public final MaterialGenerator setItem(@Nonnull SlimefunItemStack material) {
+        this.item = material;
+        return this;
+    }
+
+    public final MaterialGenerator setItem(@Nonnull SlimefunItemStack material, int amount) {
+        ItemStack item = material.clone();
+        item.setAmount(amount);
         this.item = item;
         return this;
     }

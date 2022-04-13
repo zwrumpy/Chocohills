@@ -152,7 +152,7 @@ public class ChocoItemSetup {
                 }
         )
                 .setItem(Material.NETHERITE_INGOT)
-                .setRate(1, 300)
+                .setRate(2, 300)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -162,8 +162,8 @@ public class ChocoItemSetup {
                         ChocoItems.CHOCO_CARBON, ChocoItems.TORCHTILLAS, ChocoItems.CHOCO_CARBON
                 }
         )
-                .setItem(SlimefunItems.CARBON)
-                .setRate(1, 1)
+                .setItem(SlimefunItems.CARBON,64)
+                .setRate(2, 30)
                 .register(addon);
     }
 
