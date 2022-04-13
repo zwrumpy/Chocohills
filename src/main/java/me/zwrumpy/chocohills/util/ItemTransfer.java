@@ -17,57 +17,57 @@ import javax.annotation.Nonnull;
 
 public class ItemTransfer {
 
-    public static void SlimefunToVanillaUp(Block b) {
+    public static void SlimefunToVanillaUp(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.DOWN);
         Block outputBlock = b.getRelative(BlockFace.UP);
         SlimefunToVanilla(inputBlock, outputBlock);
     }
 
-    public static void SlimefunToVanillaDown(Block b) {
+    public static void SlimefunToVanillaDown(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.UP);
         Block outputBlock = b.getRelative(BlockFace.DOWN);
         SlimefunToVanilla(inputBlock, outputBlock);
     }
 
-    public static void vanillaTransferItemUp(Block b) {
+    public static void vanillaTransferItemUp(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.DOWN);
         Block outputBlock = b.getRelative(BlockFace.UP);
         vanillaToVanilla(inputBlock, outputBlock);
     }
 
-    public static void vanillaTransferItemDown(Block b) {
+    public static void vanillaTransferItemDown(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.UP);
         Block outputBlock = b.getRelative(BlockFace.DOWN);
         vanillaToVanilla(inputBlock, outputBlock);
     }
 
-    public boolean isVanillaStorage(BlockState block) {
+    public boolean isVanillaStorage(@Nonnull BlockState block) {
         if (!(block instanceof InventoryHolder)) return false;
         Inventory blockInv = ((InventoryHolder) block).getInventory();
         if (blockInv == null) return false;
         return true;
     }
 
-    public boolean isSlimefunStorage(BlockState block) {
+    public boolean isSlimefunStorage(@Nonnull BlockState block) {
         if (BlockStorage.check((Block) block) == null) return false;
         BlockMenu blockInv = BlockStorage.getInventory((Block) block);
         if (blockInv == null) return false;
         return true;
     }
 
-    public static void vanillaToSlimefunDown(Block b) {
+    public static void vanillaToSlimefunDown(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.UP);
         Block outputBlock = b.getRelative(BlockFace.DOWN);
         vanillaToSlimefun(inputBlock, outputBlock);
     }
 
-    public static void vanillaToSlimefunUp(Block b) {
+    public static void vanillaToSlimefunUp(@Nonnull Block b) {
         Block inputBlock = b.getRelative(BlockFace.DOWN);
         Block outputBlock = b.getRelative(BlockFace.UP);
         vanillaToSlimefun(inputBlock, outputBlock);
     }
 
-    static void vanillaToVanilla(Block inputBlock, Block outputBlock) {
+    static void vanillaToVanilla(@Nonnull Block inputBlock, @Nonnull Block outputBlock) {
         BlockState input = PaperLib.getBlockState(inputBlock, false).getState();
         BlockState output = PaperLib.getBlockState(outputBlock, false).getState();
 
@@ -94,7 +94,7 @@ public class ItemTransfer {
         }
     }
 
-    public static void SlimefunToVanilla(Block inputBlock, Block outputBlock) {
+    public static void SlimefunToVanilla(@Nonnull Block inputBlock, @Nonnull Block outputBlock) {
         BlockState output = PaperLib.getBlockState(outputBlock, false).getState();
 
         if (BlockStorage.check(inputBlock) == null) return;

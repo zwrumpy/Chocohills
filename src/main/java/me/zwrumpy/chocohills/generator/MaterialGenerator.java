@@ -37,7 +37,6 @@ public class MaterialGenerator extends SlimefunItem {
     @Override
     public void preRegister() {
         addItemHandler(new BlockTicker() {
-
             @Override
             @ParametersAreNonnullByDefault
             public void tick(Block b, SlimefunItem sf, Config data) {
@@ -77,7 +76,6 @@ public class MaterialGenerator extends SlimefunItem {
             }
             generatorProgress.put(pos, progress);
         }
-
     }
 
     public final MaterialGenerator setItem(@Nonnull Material material, int amount) {
