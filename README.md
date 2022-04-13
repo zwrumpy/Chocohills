@@ -7,6 +7,7 @@
   * Hyper Crystal
   * Choco Crystal X2
   * Energized Crystal
+  * Choco Carbon
 
 **Item Transporters**
   * Arfy Fetch Up and Down - fast item transfer of vanilla storage

@@ -137,7 +137,7 @@ public class ChocoItems {
             Material.BASALT,
             "&8&lArfbon Generator",
             "&fUpon discovery of wooferite",
-            "&fDr Arf experimented and found a new ways",
+            "&fDr Arf experimented and found more ways",
             "&fto use this material and developed new arfbon",
             " ",
             "&7Usage:",
