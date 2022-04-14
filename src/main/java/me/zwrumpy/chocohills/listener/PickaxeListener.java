@@ -48,9 +48,11 @@ public class PickaxeListener implements Listener {
         if (e.getItem().getType() == Material.AIR) return;
         if (e.getItem().getType() != Material.NETHERITE_PICKAXE) return;
         if (this.blockfaceMap.containsKey(e.getPlayer())) return;
+
         SlimefunItem sfItem = SlimefunItem.getByItem(e.getItem());
         if (sfItem == null) return;
         if (sfItem.getId() == null) return;
+
         if (sfItem.getId().contains("BLASTXEL")) {
             this.blockfaceMap.put(e.getPlayer(), e.getBlockFace());
             log("face 0");
@@ -63,8 +65,8 @@ public class PickaxeListener implements Listener {
         if (e.isCancelled()) return;
         if (!this.blockfaceMap.containsKey(e.getPlayer())) return;
         log("break 0");
-        SlimefunItem sfItem = SlimefunItem.getByItem(e.getPlayer().getInventory().getItemInMainHand());
 
+        SlimefunItem sfItem = SlimefunItem.getByItem(e.getPlayer().getInventory().getItemInMainHand());
         if (sfItem == null) return;
         if (!sfItem.getId().contains("BLASTXEL")) {
             this.blockfaceMap.remove(e.getPlayer());

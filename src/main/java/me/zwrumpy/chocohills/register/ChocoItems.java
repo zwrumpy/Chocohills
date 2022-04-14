@@ -319,7 +319,7 @@ public class ChocoItems {
             Material.DIAMOND_AXE,
             "&4YanYan Axe",
             "Very hungry little axe",
-            "eats chococrystal and poop into",
+            "eats choco crystal and poop into",
             "concentrated energy",
             " ",
             "One hit enemy"

@@ -28,28 +28,24 @@ public class TorchInteract implements Listener{
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onTorchClick(PlayerInteractEvent e) {
-        if (
-                e.getAction() == Action.LEFT_CLICK_AIR ||
-                e.getAction() == Action.LEFT_CLICK_BLOCK
-        )
-        {
-            if (isItemEmpty(e.getItem())) return;
+        if (e.getAction() != Action.LEFT_CLICK_AIR || e.getAction() != Action.LEFT_CLICK_BLOCK) return;
+        if (isItemEmpty(e.getItem())) return;
+        ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+        if (!isSfItem("TORCHTILLAS", item)) return;
 
-            ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
-            if (isSfItem("TORCHTILLAS", item)) {
-                if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null){
-                    log("torchillas is already on ");
-                    return;
-                }
-                log("torchillas ");
-                int minutes30 = 30 * (60 * 20);
-                e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
-            }
+        if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null){
+            log("torchillas is already on ");
+            return;
         }
+
+        log("torchillas ");
+        int minutes30 = 30 * (60 * 20);
+        e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
+
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
-    public void onTorchClick(BlockPlaceEvent e) {
+    public void onTorchPlace(BlockPlaceEvent e) {
         ItemStack item = e.getItemInHand();
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem != null && !(sfItem instanceof NotPlaceable)) {
@@ -62,7 +58,7 @@ public class TorchInteract implements Listener{
     boolean isSfItem(String SfItemId, ItemStack item){
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem == null) return false;
-        if (sfItem.getId() == null) return false ;
+        if (sfItem.getId() == null) return false;
         if (!sfItem.getId().contains(SfItemId)) return false;
         return true;
     }
