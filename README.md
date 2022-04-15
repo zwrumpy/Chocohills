@@ -8,6 +8,8 @@
   * Choco Crystal X2
   * Energized Crystal
   * Choco Carbon
+  * Ayan Crystal
+  * Ghosting Goo
 
 **Item Transporters**
   * Arfy Fetch Up and Down - fast item transfer of vanilla storage
@@ -21,5 +23,5 @@
 **Material Generators**
   * Arfwooferite - netherite generator
   * Arfbon - carbon generator
-
-
+  * AyanCluster - amethyst cluster generator
+  * Drt Goo - strage nether goo generator
