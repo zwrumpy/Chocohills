@@ -92,6 +92,12 @@ public class ChocoItemSetup {
                 SlimefunItems.CARBON, new ItemStack(Material.DRAGON_EGG), SlimefunItems.CARBON,
                 ChocoItems.CHOCO_CRYSTAL, null, ChocoItems.CHOCO_CRYSTAL
         });
+
+        registerResource(ChocoItems.AYANSHARD, new ItemStack[]{
+                ChocoItems.CHOCO_CRYSTAL, new ItemStack(Material.AMETHYST_SHARD), ChocoItems.CHOCO_CRYSTAL,
+                new ItemStack(Material.AMETHYST_SHARD),  new ItemStack(Material.AMETHYST_SHARD),  new ItemStack(Material.AMETHYST_SHARD),
+                ChocoItems.CHOCO_CRYSTAL, new ItemStack(Material.AMETHYST_SHARD), ChocoItems.CHOCO_CRYSTAL
+        });
     }
 
     void machines() {
@@ -149,8 +155,7 @@ public class ChocoItemSetup {
                         null, ChocoItems.ENERGIZED_CRYSTAL, null,
                         SlimefunItems.SOLAR_GENERATOR_4, SlimefunItems.ENERGIZED_CAPACITOR, SlimefunItems.SOLAR_GENERATOR_4,
                         null, ChocoItems.TORCHTILLAS, null
-                }
-        )
+                })
                 .setItem(Material.NETHERITE_INGOT)
                 .setRate(2, 300)
                 .register(addon);
@@ -160,10 +165,19 @@ public class ChocoItemSetup {
                         null,SlimefunItems.ENERGIZED_CAPACITOR, null,
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
                         ChocoItems.CHOCO_CARBON, ChocoItems.TORCHTILLAS, ChocoItems.CHOCO_CARBON
-                }
-        )
+                })
                 .setItem(SlimefunItems.CARBON,64)
                 .setRate(2, 30)
+                .register(addon);
+
+        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.AYANCLUSTER, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        ChocoItems.AYANCLUSTER,SlimefunItems.ENERGIZED_CAPACITOR, ChocoItems.AYANCLUSTER,
+                        SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
+                        ChocoItems.AYANCLUSTER, ChocoItems.TORCHTILLAS, ChocoItems.AYANCLUSTER
+                })
+                .setItem(Material.AMETHYST_CLUSTER,16)
+                .setRate(4, 120)
                 .register(addon);
     }
 

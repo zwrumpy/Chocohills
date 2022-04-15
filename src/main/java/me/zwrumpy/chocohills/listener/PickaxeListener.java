@@ -73,7 +73,6 @@ public class PickaxeListener implements Listener {
             return;
         }
         log("break 1");
-
         int level = 1;
         if (sfItem.getId().contains("BLASTXEL_2")) level = 3;
         if (sfItem.getId().contains("BLASTXEL_3")) level = 6;

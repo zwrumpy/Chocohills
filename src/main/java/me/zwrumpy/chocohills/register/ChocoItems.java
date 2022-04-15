@@ -109,6 +109,12 @@ public class ChocoItems {
             ""
     );
 
+    public static final SlimefunItemStack AYANSHARD = new SlimefunItemStack(
+            "CHOCO_INGOT",
+            Material.AMETHYST_SHARD,
+            "&e&lAyan Shard",  ""
+    );
+
     public static final SlimefunItemStack CHOCO_INGOT = new SlimefunItemStack(
             "CHOCO_INGOT",
             Material.GOLD_INGOT,
@@ -144,6 +150,23 @@ public class ChocoItems {
             "&fCarbon Generator",
             "&7Rate: &f64 &7carbon",
             "&7Time: &f30 &7seconds",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack AYANCLUSTER = new SlimefunItemStack(
+            "AYANCLUSTER",
+            Material.AMETHYST_BLOCK,
+            "&8&lAyanCluster Generator",
+            "&fDr Arf assistant Ayan stumble",
+            "&fupon new wooferite maliability",
+            "&fnow can generate Amethyst Cluster",
+            " ",
+            "&7Usage:",
+            "&fCarbon Generator",
+            "&7Rate: &f16 &7Amethyst Cluster",
+            "&7Time: &f120 &7seconds",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"

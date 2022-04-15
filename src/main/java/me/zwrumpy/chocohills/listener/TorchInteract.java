@@ -21,6 +21,7 @@ import java.util.logging.Level;
 
 public class TorchInteract implements Listener{
     private JavaPlugin plugin;
+    int minutes30 = 30 * (60 * 20);
 
     public TorchInteract(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -39,9 +40,7 @@ public class TorchInteract implements Listener{
         }
 
         log("torchillas ");
-        int minutes30 = 30 * (60 * 20);
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
-
     }
 
     @EventHandler(priority = EventPriority.LOWEST)

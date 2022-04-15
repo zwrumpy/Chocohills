@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.Commands;
+package me.zwrumpy.chocohills.commands;
 
 import me.zwrumpy.chocohills.util.PlayerHotbar;
 import org.bukkit.command.Command;

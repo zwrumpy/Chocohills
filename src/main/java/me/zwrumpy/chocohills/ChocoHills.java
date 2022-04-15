@@ -1,7 +1,7 @@
 package me.zwrumpy.chocohills;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import me.zwrumpy.chocohills.Commands.ToolCommand;
+import me.zwrumpy.chocohills.commands.ToolCommand;
 import me.zwrumpy.chocohills.listener.PickaxeListener;
 import me.zwrumpy.chocohills.listener.TorchInteract;
 import me.zwrumpy.chocohills.register.ChocoItemSetup;
