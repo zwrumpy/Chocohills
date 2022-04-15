@@ -1,35 +1,21 @@
-package me.zwrumpy.chocohills.machines;
+package me.zwrumpy.chocohills.transporter;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
-import me.zwrumpy.chocohills.generator.MaterialGenerator;
 import me.zwrumpy.chocohills.util.ItemTransfer;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.HashMap;
-import java.util.Map;
 
-public class MaterialExporterUp extends SlimefunItem {
+public class MaterialImporterDown extends SlimefunItem {
     @ParametersAreNonnullByDefault
-    public MaterialExporterUp(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public MaterialImporterDown(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -39,7 +25,7 @@ public class MaterialExporterUp extends SlimefunItem {
             @Override
             @ParametersAreNonnullByDefault
             public void tick(Block b, SlimefunItem sf, Config data) {
-                MaterialExporterUp.this.tick(b);
+                MaterialImporterDown.this.tick(b);
             }
 
             @Override
@@ -50,6 +36,7 @@ public class MaterialExporterUp extends SlimefunItem {
     }
 
     public void tick(@Nonnull Block b) {
-        ItemTransfer.SlimefunToVanillaUp(b);
+        ItemTransfer.vanillaToSlimefunDown(b);
     }
 }
+

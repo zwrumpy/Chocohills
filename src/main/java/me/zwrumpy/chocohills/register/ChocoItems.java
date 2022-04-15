@@ -110,9 +110,17 @@ public class ChocoItems {
     );
 
     public static final SlimefunItemStack AYANSHARD = new SlimefunItemStack(
-            "CHOCO_INGOT",
+            "AYANSHARD",
             Material.AMETHYST_SHARD,
             "&e&lAyan Shard",  ""
+    );
+
+    public static final SlimefunItemStack GHOSTINGGOO = new SlimefunItemStack(
+            "GHOSTINGGOO",
+            Material.MAGENTA_DYE,
+            "&e&lGhosting Goo",
+            "A woof clan spirit trapped inside ",
+            "a gelatinous substance"
     );
 
     public static final SlimefunItemStack CHOCO_INGOT = new SlimefunItemStack(
@@ -166,7 +174,22 @@ public class ChocoItems {
             "&7Usage:",
             "&fCarbon Generator",
             "&7Rate: &f16 &7Amethyst Cluster",
-            "&7Time: &f120 &7seconds",
+            "&7Time: &f2 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack DRTGOO = new SlimefunItemStack(
+            "DRTGOO",
+            Material.MAGENTA_DYE,
+            "&8&lDrt Goo",
+            "&fNew Ayancluster liquid mix",
+            "&faccelerates its material regeneration",
+            "&7Usage:",
+            "&fStrange Nether Goo Generator",
+            "&7Rate: &f8 &7Goo",
+            "&7Time: &f3 &7minutes",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"
