@@ -73,7 +73,6 @@ public class PickaxeListener implements Listener {
         this.blockfaceMap.remove(player);
     }
 
-
     boolean isBlastxelOnHand(@Nonnull Player player) {
         SlimefunItem sfItem = SlimefunItem.getByItem(player.getInventory().getItemInMainHand());
         if (sfItem == null) return false;

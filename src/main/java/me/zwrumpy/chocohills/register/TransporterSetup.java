@@ -65,13 +65,4 @@ public class TransporterSetup {
                 }
         ).register(addon);
     }
-
-
-    void registerTools(SlimefunItemStack stack, ItemStack[] recipe) {
-        new UnplaceableBlock(ChocoItems.CH_TOOLS, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(this.addon);
-    }
-
-    void registerResource(SlimefunItemStack stack, ItemStack[] recipe) {
-        new UnplaceableBlock(ChocoItems.CH_RESOURCES, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(this.addon);
-    }
 }
