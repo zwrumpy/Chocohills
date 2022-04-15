@@ -115,8 +115,8 @@ public class ChocoItems {
             "GHOSTINGGOO",
             Material.MAGENTA_DYE,
             "&e&lGhosting Goo",
-            "A woof clan spirit trapped inside ",
-            "a gelatinous substance"
+            "&fA woof spirit trapped inside ",
+            "&fa gelatinous substance"
     );
 
     public static final SlimefunItemStack CHOCO_INGOT = new SlimefunItemStack(
@@ -162,7 +162,7 @@ public class ChocoItems {
     public static final SlimefunItemStack AYANCLUSTER = new SlimefunItemStack(
             "AYANCLUSTER",
             Material.AMETHYST_BLOCK,
-            "&8&lAyanCluster Generator",
+            "&5&lAyanCluster Generator",
             "&fDr Arf assistant Ayan stumble",
             "&fupon new wooferite maliability",
             "&fnow can generate Amethyst Cluster",
@@ -179,7 +179,7 @@ public class ChocoItems {
     public static final SlimefunItemStack DRTGOO = new SlimefunItemStack(
             "DRTGOO",
             Material.BUBBLE_CORAL_BLOCK,
-            "&8&lDrt Goo",
+            "&d&lDrt Goo",
             "&fNew Ayancluster liquid mix",
             "&faccelerates its material regeneration",
             " ",

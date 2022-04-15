@@ -1,10 +1,9 @@
-package me.zwrumpy.chocohills.block;
+package me.zwrumpy.chocohills.util.block;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-import me.zwrumpy.chocohills.util.BlockType;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
