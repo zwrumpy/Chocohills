@@ -7,11 +7,11 @@ import me.zwrumpy.chocohills.ChocoHills;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class Tools {
+public class ToolSetup {
     ChocoHills addon;
     SlimefunItemStack tempStack;
 
-    public Tools(ChocoHills addon) {
+    public ToolSetup(ChocoHills addon) {
         this.addon = addon;
         setup();
     }

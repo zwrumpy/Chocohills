@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.tools;
+package me.zwrumpy.chocohills.util;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;

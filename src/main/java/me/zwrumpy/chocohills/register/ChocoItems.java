@@ -4,13 +4,9 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.NestedItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.SubItemGroup;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.zwrumpy.chocohills.ChocoHills;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockState;
-import org.bukkit.persistence.PersistentDataContainer;
 
 public class ChocoItems {
 
@@ -182,10 +178,11 @@ public class ChocoItems {
 
     public static final SlimefunItemStack DRTGOO = new SlimefunItemStack(
             "DRTGOO",
-            Material.MAGENTA_DYE,
+            Material.BUBBLE_CORAL_BLOCK,
             "&8&lDrt Goo",
             "&fNew Ayancluster liquid mix",
             "&faccelerates its material regeneration",
+            " ",
             "&7Usage:",
             "&fStrange Nether Goo Generator",
             "&7Rate: &f8 &7Goo",

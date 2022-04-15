@@ -8,11 +8,11 @@ import me.zwrumpy.chocohills.ChocoHills;
 import me.zwrumpy.chocohills.transporter.*;
 import org.bukkit.inventory.ItemStack;
 
-public class Transporters {
+public class TransporterSetup {
     ChocoHills addon;
     SlimefunItemStack tempStack;
 
-    public Transporters(ChocoHills addon) {
+    public TransporterSetup(ChocoHills addon) {
         this.addon = addon;
         setup();
     }

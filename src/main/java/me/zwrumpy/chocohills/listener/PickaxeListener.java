@@ -7,8 +7,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import me.zwrumpy.chocohills.block.BlockEdit;
 import me.zwrumpy.chocohills.block.BlockSelection;
-import me.zwrumpy.chocohills.block.BlockType;
-import me.zwrumpy.chocohills.tools.ToolType;
+import me.zwrumpy.chocohills.util.BlockType;
+import me.zwrumpy.chocohills.util.ToolType;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -21,7 +21,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 

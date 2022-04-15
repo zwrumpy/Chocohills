@@ -8,11 +8,11 @@ import me.zwrumpy.chocohills.generator.MaterialGenerator;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class MaterialGenerators {
+public class MaterialGeneratorSetup {
     ChocoHills addon;
     SlimefunItemStack tempStack;
 
-    public MaterialGenerators(ChocoHills addon) {
+    public MaterialGeneratorSetup(ChocoHills addon) {
         this.addon = addon;
         setup();
     }

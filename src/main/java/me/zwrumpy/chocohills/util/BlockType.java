@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.block;
+package me.zwrumpy.chocohills.util;
 
 import java.util.logging.Level;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
