@@ -21,8 +21,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import javax.annotation.Nonnull;
 
 public class PickaxeListener implements Listener {
     private JavaPlugin plugin;
@@ -49,52 +52,55 @@ public class PickaxeListener implements Listener {
         if (e.getItem().getType() != Material.NETHERITE_PICKAXE) return;
         if (this.blockfaceMap.containsKey(e.getPlayer())) return;
 
-        SlimefunItem sfItem = SlimefunItem.getByItem(e.getItem());
-        if (sfItem == null) return;
-        if (sfItem.getId() == null) return;
-
-        if (sfItem.getId().contains("BLASTXEL")) {
+        if (isBlastxelOnHand(e.getPlayer())) {
             this.blockfaceMap.put(e.getPlayer(), e.getBlockFace());
-            log("face 0");
         }
-        log("face 1 test");
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onBlastBreak(BlockBreakEvent e) {
         if (e.isCancelled()) return;
         if (!this.blockfaceMap.containsKey(e.getPlayer())) return;
-        log("break 0");
-
-        SlimefunItem sfItem = SlimefunItem.getByItem(e.getPlayer().getInventory().getItemInMainHand());
-        if (sfItem == null) return;
-        if (!sfItem.getId().contains("BLASTXEL")) {
-            this.blockfaceMap.remove(e.getPlayer());
-            return;
-        }
-        log("break 1");
-        int level = 1;
-        if (sfItem.getId().contains("BLASTXEL_2")) level = 3;
-        if (sfItem.getId().contains("BLASTXEL_3")) level = 6;
 
         Player player = e.getPlayer();
-        Block block = e.getBlock();
-        World world = e.getBlock().getWorld();
-        BlockFace face = blockfaceMap.get(player);
+        if (!(isBlastxelOnHand(player))) {
+            this.blockfaceMap.remove(player);
+            return;
+        }
 
-        int finalLevel = level;
-
-        CompletableFuture
-                .supplyAsync(() -> selection.cuboid(block.getLocation(), face, finalLevel))
-                .thenApply(blocks -> blockEdit.filterBlocks(blocks))
-                .thenApply(filteredBlocks -> blockEdit.filterProtectedBlocks(filteredBlocks, player))
-                .thenAccept(filteredProtectedBlocks -> processBlocks(filteredProtectedBlocks, world));
-
-        this.blockfaceMap.remove(e.getPlayer());
-        log("break 2");
+        SlimefunItem sfItem = SlimefunItem.getByItem(player.getInventory().getItemInMainHand());
+        int level = getLevel(sfItem);
+        processBlocks(e.getBlock(), player, level);
+        this.blockfaceMap.remove(player);
     }
 
-    void processBlocks(List<Block> blocks, final World world) {
+
+    boolean isBlastxelOnHand(@Nonnull Player player) {
+        SlimefunItem sfItem = SlimefunItem.getByItem(player.getInventory().getItemInMainHand());
+        if (sfItem == null) return false;
+        if (!sfItem.getId().contains("BLASTXEL")) return false;
+        return true;
+    }
+
+    int getLevel(@Nonnull SlimefunItem item) {
+        int level = 1;
+        if(item.getId().contains("BLASTXEL_2")) level = 3;
+        if(item.getId().contains("BLASTXEL_3")) level =6;
+        return level;
+    }
+
+    void processBlocks(@Nonnull  Block block, @Nonnull Player player, int level){
+        World world = block.getWorld();
+        BlockFace face = this.blockfaceMap.get(player);
+
+        CompletableFuture
+                .supplyAsync(() -> selection.cuboid(block.getLocation(), face, level))
+                .thenApply(blocks -> blockEdit.filterBlocks(blocks))
+                .thenApply(filteredBlocks -> blockEdit.filterProtectedBlocks(filteredBlocks, player))
+                .thenAccept(filteredProtectedBlocks -> processBlockDrops(filteredProtectedBlocks, world));
+    }
+
+    void processBlockDrops(List<Block> blocks, final World world) {
         (new BukkitRunnable() {
             public void run() {
                 blockEdit.spawnDrops(blocks, world);
