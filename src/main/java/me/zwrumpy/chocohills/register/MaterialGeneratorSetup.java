@@ -40,9 +40,9 @@ public class MaterialGeneratorSetup {
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.AYANCLUSTER, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
-                        ChocoItems.AYANCLUSTER,SlimefunItems.ENERGIZED_CAPACITOR, ChocoItems.AYANCLUSTER,
+                        ChocoItems.AYANSHARD,SlimefunItems.ENERGIZED_CAPACITOR, ChocoItems.AYANSHARD,
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
-                        ChocoItems.AYANCLUSTER, ChocoItems.TORCHTILLAS, ChocoItems.AYANCLUSTER
+                        ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
                 .setItem(Material.AMETHYST_CLUSTER,16)
                 .setRate(4, 120)
@@ -50,9 +50,9 @@ public class MaterialGeneratorSetup {
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DRTGOO, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
-                        ChocoItems.AYANCLUSTER,SlimefunItems.ENERGIZED_CAPACITOR, ChocoItems.AYANCLUSTER,
+                        null, SlimefunItems.ENERGIZED_CAPACITOR, null,
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
-                        ChocoItems.AYANCLUSTER, ChocoItems.TORCHTILLAS, ChocoItems.AYANCLUSTER
+                        ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
                 .setItem(SlimefunItems.STRANGE_NETHER_GOO,8)
                 .setRate(6, 180)
