@@ -29,17 +29,12 @@ public class TorchInteract implements Listener{
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onTorchClick(PlayerInteractEvent e) {
-        if (e.getAction() != Action.LEFT_CLICK_AIR || e.getAction() != Action.LEFT_CLICK_BLOCK) return;
+        if (!(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)) return;
         if (isItemEmpty(e.getItem())) return;
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
         if (!isSfItem("TORCHTILLAS", item)) return;
+        if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null) return;
 
-        if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null){
-            log("torchillas is already on ");
-            return;
-        }
-
-        log("torchillas ");
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
     }
 
