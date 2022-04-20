@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.util;
+package me.zwrumpy.chocohills.util.tool;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -64,7 +64,6 @@ public class ToolType {
 
     private boolean isType(ItemStack item, Material material){ return item.getType().equals(material);
     }
-
     public boolean isEmpty(ItemStack item) {
         return (item == null || item.getType() == Material.AIR);
     }

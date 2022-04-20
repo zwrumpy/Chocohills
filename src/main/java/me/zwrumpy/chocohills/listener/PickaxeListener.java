@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import me.zwrumpy.chocohills.util.block.BlockEdit;
 import me.zwrumpy.chocohills.util.block.BlockSelection;
 import me.zwrumpy.chocohills.util.block.BlockType;
-import me.zwrumpy.chocohills.util.ToolType;
+import me.zwrumpy.chocohills.util.tool.ToolType;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -83,7 +83,7 @@ public class PickaxeListener implements Listener {
     int getLevel(@Nonnull SlimefunItem item) {
         int level = 1;
         if(item.getId().contains("BLASTXEL_2")) level = 3;
-        if(item.getId().contains("BLASTXEL_3")) level =6;
+        if(item.getId().contains("BLASTXEL_3")) level = 6;
         return level;
     }
 

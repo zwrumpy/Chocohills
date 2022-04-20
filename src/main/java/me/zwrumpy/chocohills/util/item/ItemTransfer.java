@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.util;
+package me.zwrumpy.chocohills.util.item;
 
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -14,6 +14,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 public class ItemTransfer {
 
@@ -66,8 +67,8 @@ public class ItemTransfer {
         Block outputBlock = b.getRelative(BlockFace.UP);
         vanillaToSlimefun(inputBlock, outputBlock);
     }
-
-    static void vanillaToVanilla(@Nonnull Block inputBlock, @Nonnull Block outputBlock) {
+    @ParametersAreNonnullByDefault
+    static void vanillaToVanilla(Block inputBlock, Block outputBlock) {
         BlockState input = PaperLib.getBlockState(inputBlock, false).getState();
         BlockState output = PaperLib.getBlockState(outputBlock, false).getState();
 
@@ -93,8 +94,8 @@ public class ItemTransfer {
             i.setAmount(0);
         }
     }
-
-    public static void SlimefunToVanilla(@Nonnull Block inputBlock, @Nonnull Block outputBlock) {
+    @ParametersAreNonnullByDefault
+    public static void SlimefunToVanilla(Block inputBlock, Block outputBlock) {
         BlockState output = PaperLib.getBlockState(outputBlock, false).getState();
 
         if (BlockStorage.check(inputBlock) == null) return;
@@ -120,8 +121,8 @@ public class ItemTransfer {
             inputInv.replaceExistingItem(slot, new ItemStack(Material.AIR));
         }
     }
-
-    public static void vanillaToSlimefun(@Nonnull Block inputBlock, @Nonnull Block outputBlock) {
+    @ParametersAreNonnullByDefault
+    public static void vanillaToSlimefun(Block inputBlock, Block outputBlock) {
         BlockState input = PaperLib.getBlockState(inputBlock, false).getState();
 
         if (!(input instanceof InventoryHolder)) {return;}

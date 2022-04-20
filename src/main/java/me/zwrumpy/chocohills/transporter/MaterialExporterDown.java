@@ -6,7 +6,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.zwrumpy.chocohills.util.ItemTransfer;
+import me.zwrumpy.chocohills.util.item.ItemTransfer;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 

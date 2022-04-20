@@ -4,10 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.zwrumpy.chocohills.commands.ToolCommand;
 import me.zwrumpy.chocohills.listener.PickaxeListener;
 import me.zwrumpy.chocohills.listener.TorchInteract;
-import me.zwrumpy.chocohills.register.MaterialGeneratorSetup;
-import me.zwrumpy.chocohills.register.ResourceSetup;
-import me.zwrumpy.chocohills.register.ToolSetup;
-import me.zwrumpy.chocohills.register.TransporterSetup;
+import me.zwrumpy.chocohills.register.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ChocoHills extends JavaPlugin implements SlimefunAddon {
@@ -24,6 +21,7 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
         new ToolSetup(this);
         new TransporterSetup(this);
         new MaterialGeneratorSetup(this);
+        new MachineSetup(this);
         new ResourceSetup(this);
     }
 

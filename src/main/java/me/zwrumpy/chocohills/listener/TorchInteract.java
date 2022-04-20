@@ -38,17 +38,6 @@ public class TorchInteract implements Listener{
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
     }
 
-    @EventHandler(priority = EventPriority.LOWEST)
-    public void onTorchPlace(BlockPlaceEvent e) {
-        ItemStack item = e.getItemInHand();
-        SlimefunItem sfItem = SlimefunItem.getByItem(item);
-        if (sfItem != null && !(sfItem instanceof NotPlaceable)) {
-            if (!sfItem.canUse(e.getPlayer(), true)) {
-                e.setCancelled(true);
-            }
-        }
-    }
-
     boolean isSfItem(String SfItemId, ItemStack item){
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem == null) return false;
@@ -61,10 +50,5 @@ public class TorchInteract implements Listener{
         if (item == null) return true;
         if (item.getType() == Material.AIR) return true;
         return false;
-    }
-
-    public void log(String string) {
-        if (plugin.getConfig().getBoolean("debug") == true)
-            Bukkit.getLogger().log(Level.INFO, string);
     }
 }

@@ -9,9 +9,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.InventoryHolder;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class BlockType {
-    public boolean isBlackListed(Block block) {
-        if (block != null && block.getType() != null) {
+    public boolean isBlackListed(@Nonnull Block block) {
+        if (block.getType() != null) {
             if (block.getType().isAir()) return true;
             if (!block.getType().isSolid()) return true;
             if (isIndestructible(block)) return true;
@@ -21,22 +24,22 @@ public class BlockType {
         }
         return false;
     }
-
+    @ParametersAreNonnullByDefault
     public boolean isProtected(Block block, Player player) {
         BlockBreakEvent event = new BlockBreakEvent(block, player);
         Bukkit.getPluginManager().callEvent(event);
         return event.isCancelled();
     }
 
-    public boolean isSfBlock(Block block) {
+    public boolean isSfBlock(@Nonnull Block block) {
         return (BlockStorage.check(block) != null);
     }
 
-    public boolean isContainer(Block block) {
+    public boolean isContainer(@Nonnull Block block) {
         return block.getState() != null && block.getState() instanceof InventoryHolder;
     }
 
-    public boolean isShovelable(Block block) {
+    public boolean isShovelable(@Nonnull Block block) {
         if (isType(block, Material.SAND)) return true;
         if (isType(block, Material.CLAY)) return true;
         if (isType(block, Material.COARSE_DIRT)) return true;
@@ -55,7 +58,7 @@ public class BlockType {
         return false;
     }
 
-    public boolean isSmeltable(Block block) {
+    public boolean isSmeltable(@Nonnull Block block) {
         if (isType(block, Material.COAL_ORE)) return true;
         if (isType(block, Material.DEEPSLATE_COAL_ORE)) return true;
         if (isType(block, Material.IRON_ORE)) return true;
@@ -67,7 +70,7 @@ public class BlockType {
         return false;
     }
 
-    public boolean isIndestructible(Block block) {
+    public boolean isIndestructible(@Nonnull Block block) {
         if (isType(block, Material.BEDROCK)) return true;
         if (isType(block, Material.BARRIER)) return true;
         if (isType(block, Material.END_PORTAL_FRAME)) return true;
@@ -76,9 +79,6 @@ public class BlockType {
         return false;
     }
 
-    void log(String string) {
-        Bukkit.getLogger().log(Level.INFO, string);
-    }
 
     private boolean isType(Block block, Material material){ return block.getType().equals(material);
     }

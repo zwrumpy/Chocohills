@@ -77,12 +77,10 @@ public class MaterialGenerator extends SlimefunItem {
             generatorProgress.put(pos, progress);
         }
     }
-
     public final MaterialGenerator setItem(@Nonnull Material material, int amount) {
         this.item = new ItemStack(material, amount);
         return this;
     }
-
     public final MaterialGenerator setItem(@Nonnull Material material) {
         this.item = new ItemStack(material);
         return this;

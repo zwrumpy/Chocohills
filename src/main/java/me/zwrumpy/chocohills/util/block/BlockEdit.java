@@ -14,6 +14,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class BlockEdit {
     private final BlockType type = new BlockType();
 
@@ -32,7 +34,7 @@ public class BlockEdit {
         }
         return filterBlocks;
     }
-
+    @ParametersAreNonnullByDefault
     public List<Block> filterProtectedBlocks(List<Block> blocks, final Player player) {
         final List<Block> filteredBlocks = new ArrayList<>();
         (new BukkitRunnable() {
@@ -48,18 +50,13 @@ public class BlockEdit {
     }
 
     public void removeBlocks(List<Block> blockList) {
-        for (Block block : blockList)
-            block.setType(Material.AIR);
+        for (Block block : blockList) block.setType(Material.AIR);
     }
-
+    @ParametersAreNonnullByDefault
     public void spawnDrops(List<Block> blockList, World world) {
         for (Block block : blockList) {
             for (ItemStack drop : block.getDrops())
                 world.dropItem(block.getLocation(), drop);
         }
-    }
-
-    void log(String string) {
-        Bukkit.getLogger().log(Level.INFO, string);
     }
 }

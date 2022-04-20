@@ -9,9 +9,12 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class BlockSelection {
 
-    private List<Block> sphere(Block b) {
+    private List<Block> sphere(@Nonnull Block b) {
         List<Block> blocks = new ArrayList<>(26);
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
@@ -23,7 +26,7 @@ public class BlockSelection {
         }
         return blocks;
     }
-
+    @ParametersAreNonnullByDefault
     public static List<Block> sphere(Location center, int radius) {
         List<Block> sphere = new ArrayList<>();
         World world = center.getWorld();
@@ -42,7 +45,7 @@ public class BlockSelection {
         }
         return sphere;
     }
-
+    @ParametersAreNonnullByDefault
     public List<Block> cuboid(Location loc, BlockFace blockFace, Integer depth) {
         Location loc2 = loc.clone();
         depth = Integer.valueOf(depth.intValue() - 1);
@@ -74,7 +77,7 @@ public class BlockSelection {
         }
         return selectionCuboid(loc, loc2);
     }
-
+    @ParametersAreNonnullByDefault
     public List<Block> line(Location loc, BlockFace blockFace, Integer depth) {
         Location loc2 = loc.clone();
         depth = Integer.valueOf(depth.intValue() - 1);
@@ -100,7 +103,7 @@ public class BlockSelection {
         }
         return selectionCuboid(loc, loc2);
     }
-
+    @ParametersAreNonnullByDefault
     private List<Block> selectionCuboid(Location pos1, Location pos2) {
         List<Block> blockList = new ArrayList<>();
         int topBlockX = Math.max(pos1.getBlockX(), pos2.getBlockX());
@@ -118,10 +121,5 @@ public class BlockSelection {
             }
         }
         return blockList;
-    }
-
-
-    void log(String string) {
-        Bukkit.getLogger().log(Level.INFO, string);
     }
 }

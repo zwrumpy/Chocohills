@@ -3,7 +3,10 @@ package me.zwrumpy.chocohills.register;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.NestedItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.SubItemGroup;
+import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
+import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.zwrumpy.chocohills.ChocoHills;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -390,5 +393,21 @@ public class ChocoItems {
             "Enemy will get AFK effect",
             "and cannot move within",
             "5 seconds"
+    );
+
+    public static final SlimefunItemStack EGGPENSIVE = new SlimefunItemStack(
+            "EGGPENSIVE",
+            Material.EGG,
+            "&fEggPensive",
+            ""
+    );
+
+    public static final SlimefunItemStack EGGCOOKER = new SlimefunItemStack(
+            "EGGCOOKER",
+            Material.SMOKER,
+            "&eEgg Cooker",
+            "",
+            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
+            LoreBuilder.speed(1), LoreBuilder.powerPerSecond(20)
     );
 }
