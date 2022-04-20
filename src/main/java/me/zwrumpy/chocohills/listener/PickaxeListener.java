@@ -25,6 +25,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 public class PickaxeListener implements Listener {
     private JavaPlugin plugin;
@@ -86,8 +87,8 @@ public class PickaxeListener implements Listener {
         if(item.getId().contains("BLASTXEL_3")) level = 6;
         return level;
     }
-
-    void processBlocks(@Nonnull  Block block, @Nonnull Player player, int level){
+    @ParametersAreNonnullByDefault
+    void processBlocks(@Nonnull  Block block, Player player, int level){
         World world = block.getWorld();
         BlockFace face = this.blockfaceMap.get(player);
 
@@ -97,7 +98,7 @@ public class PickaxeListener implements Listener {
                 .thenApply(filteredBlocks -> blockEdit.filterProtectedBlocks(filteredBlocks, player))
                 .thenAccept(filteredProtectedBlocks -> processBlockDrops(filteredProtectedBlocks, world));
     }
-
+    @ParametersAreNonnullByDefault
     void processBlockDrops(List<Block> blocks, final World world) {
         (new BukkitRunnable() {
             public void run() {

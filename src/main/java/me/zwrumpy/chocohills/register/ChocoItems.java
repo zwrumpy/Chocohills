@@ -410,4 +410,11 @@ public class ChocoItems {
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1), LoreBuilder.powerPerSecond(20)
     );
+
+    public static final SlimefunItemStack MENARDZ_SMOKER = new SlimefunItemStack(
+            "MENARDZ_SMOKER",
+            Material.CAMPFIRE,
+            "&eMenardz Smoker",
+            ""
+    );
 }
