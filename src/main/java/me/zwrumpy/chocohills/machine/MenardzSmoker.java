@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import me.zwrumpy.chocohills.register.ChocoItems;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -28,15 +29,15 @@ public class MenardzSmoker extends MultiBlockMachine {
     public MenardzSmoker(ItemGroup itemGroup, SlimefunItemStack item) {
         super(itemGroup, item, new ItemStack[] {
                 null, new ItemStack(Material.OAK_FENCE), null,
-                new ItemStack(Material.DEEPSLATE), new CustomItemStack(Material.DISPENSER, "Dispenser (Facing up)"), new ItemStack(Material.DEEPSLATE),
+                null, new CustomItemStack(Material.DISPENSER, "Dispenser (Facing up)"), null,
                 new ItemStack(Material.DEEPSLATE), new ItemStack(Material.CAMPFIRE), new ItemStack(Material.DEEPSLATE)
         }, BlockFace.SELF);
     }
 
     @Override
     protected void registerDefaultRecipes(@Nonnull List<ItemStack> recipes) {
-        recipes.add(new ItemStack(Material.BLAZE_ROD));
-        recipes.add(new ItemStack(Material.BLAZE_POWDER, 4));
+        recipes.add(new ItemStack(Material.EGG));
+        recipes.add(new ItemStack(ChocoItems.TINAPANG_ITLOG));
     }
 
     @Override

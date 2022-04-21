@@ -395,6 +395,27 @@ public class ChocoItems {
             "5 seconds"
     );
 
+    public static final SlimefunItemStack BALUT = new SlimefunItemStack(
+            "EGGPENSIVE",
+            Material.EGG,
+            "&fEggPensive",
+            ""
+    );
+
+    public static final SlimefunItemStack PENOY = new SlimefunItemStack(
+            "EGGPENSIVE",
+            Material.EGG,
+            "&fEggPensive",
+            ""
+    );
+
+    public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
+            "TINAPANG_ITLOG",
+            Material.EGG,
+            "&fTinapang Itlog",
+            ""
+    );
+
     public static final SlimefunItemStack EGGPENSIVE = new SlimefunItemStack(
             "EGGPENSIVE",
             Material.EGG,
@@ -410,11 +431,57 @@ public class ChocoItems {
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1), LoreBuilder.powerPerSecond(20)
     );
-
     public static final SlimefunItemStack MENARDZ_SMOKER = new SlimefunItemStack(
             "MENARDZ_SMOKER",
             Material.CAMPFIRE,
             "&eMenardz Smoker",
+            "");
+
+    public static final SlimefunItemStack PUTIK = new SlimefunItemStack(
+            "PUTIK",
+            Material.CLAY,
+            "&ePutik",
+            "");
+
+    public static final SlimefunItemStack PALAYOK = new SlimefunItemStack(
+            "PALAYOK",
+            Material.CLAY,
+            "&ePalayok",
+            "");
+
+    public static final SlimefunItemStack BATO = new SlimefunItemStack(
+            "BATO",
+            Material.CLAY,
+            "&eBato",
+            "");
+
+    public static final SlimefunItemStack TABO = new SlimefunItemStack(
+            "TABO",
+            Material.EGG,
+            "&fTabo",
             ""
     );
+
+    public static final SlimefunItemStack PALANGGANA = new SlimefunItemStack(
+            "PALANGANA",
+            Material.EGG,
+            "&fPalanggana",
+            ""
+    );
+
+    public static final SlimefunItemStack SAMPAYAN = new SlimefunItemStack(
+            "SAMPAYAN",
+            Material.EGG,
+            "&fSampayan",
+            ""
+    );
+
+    public static final SlimefunItemStack TUYO = new SlimefunItemStack(
+            "TUYO",
+            Material.EGG,
+            "&fTuyo",
+            ""
+    );
+
+
 }

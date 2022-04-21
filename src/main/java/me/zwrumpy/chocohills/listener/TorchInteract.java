@@ -47,8 +47,9 @@ public class TorchInteract implements Listener{
         if (!sfItem.getId().contains(SfItemId)) return false;
         return true;
     }
-
     boolean isItemEmpty(@Nonnull ItemStack item){
+        if (item == null) return true;
+        if (item.getType() == null) return true;
         return (item.getType() == Material.AIR) ? true:false;
     }
 }
