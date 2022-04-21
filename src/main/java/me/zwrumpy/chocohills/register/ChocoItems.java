@@ -296,8 +296,6 @@ public class ChocoItems {
             "&8to activate"
     );
 
-
-
     public static final SlimefunItemStack EGGPENSIVE = new SlimefunItemStack(
             "EGGPENSIVE",
             Material.EGG,
@@ -311,14 +309,18 @@ public class ChocoItems {
             "&eEgg Cooker",
             "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
-            LoreBuilder.speed(1), LoreBuilder.powerPerSecond(20)
+            LoreBuilder.speed(1),
+            LoreBuilder.powerPerSecond(20)
     );
 
     public static final SlimefunItemStack MENARDZ_SMOKER = new SlimefunItemStack(
             "MENARDZ_SMOKER",
             Material.CAMPFIRE,
             "&eMenardz Smoker",
-            ""
+            "&7",
+            "&7Usage:",
+            "&7Makes Tinapa"
+
     );
 
         public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
@@ -327,6 +329,7 @@ public class ChocoItems {
             "&fTinapang Itlog",
             ""
     );
+
 //    public static final SlimefunItemStack PENOY = new SlimefunItemStack(
 //            "PENOY",
 //            Material.EGG,

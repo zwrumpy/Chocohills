@@ -24,7 +24,7 @@ public class MachineSetup {
         new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.EGGCOOKER, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         ChocoItems.TINAPANG_ITLOG, SlimefunItems.ELECTRIC_MOTOR, ChocoItems.TINAPANG_ITLOG,
-                        SlimefunItems.CARBON, ChocoItems.MENARDZ_SMOKER, SlimefunItems.CARBON,
+                        SlimefunItems.CARBON, ChocoItems.AYANSHARD, SlimefunItems.CARBON,
                         SlimefunItems.HEATING_COIL, SlimefunItems.CARBONADO, SlimefunItems.HEATING_COIL})
                 .setCapacity(256)
                 .setEnergyConsumption(10)

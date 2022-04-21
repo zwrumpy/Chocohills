@@ -27,7 +27,6 @@ public class TorchInteract implements Listener{
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
         if (!isSfItem("TORCHTILLAS", item)) return;
         if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null) return;
-
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
     }
 

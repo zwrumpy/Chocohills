@@ -22,7 +22,7 @@ public class EggCooker extends AContainer implements RecipeDisplayItem, NotHoppe
 
     @Override
     protected void registerDefaultRecipes() {
-        registerRecipe(900, new ItemStack[]{SlimefunItems.CARBON_CHUNK,new ItemStack(Material.EGG) }, new ItemStack[]{ChocoItems.EGGPENSIVE});
+        registerRecipe(900, new ItemStack[]{SlimefunItems.CARBON_CHUNK, ChocoItems.TINAPANG_ITLOG }, new ItemStack[]{ChocoItems.EGGPENSIVE});
     }
 
     @Override
