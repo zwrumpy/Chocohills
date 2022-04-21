@@ -296,125 +296,7 @@ public class ChocoItems {
             "&8to activate"
     );
 
-    public static final SlimefunItemStack JAIL_HAMMER = new SlimefunItemStack(
-            "JAIL_HAMMER",
-            Material.TORCH,
-            "&4Jail Hammer",
-            "Use: ",
-            "and cannont move within",
-            "5 seconds"
-    );
 
-    public static final SlimefunItemStack MULTONG_GHOST = new SlimefunItemStack(
-            "MULTONG_GHOST",
-            Material.TORCH,
-            "&4Multong Ghost",
-            "Use: ",
-            "and cannont move within",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack BAAM_BRUSH = new SlimefunItemStack(
-            "BAAM_BRUSH ",
-            Material.TORCH,
-            "&4Baam Brush",
-            "Use: ",
-            "and cannot interact",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack BAAM_PLACEXEL = new SlimefunItemStack(
-            "BAAM_PLACEXEL ",
-            Material.TORCH,
-            "&4Baam Brush",
-            "Use: ",
-            "and cannot interact",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack BAAM_BOT = new SlimefunItemStack(
-            "BAAM_BOT",
-            Material.TORCH,
-            "&4Baam Bot",
-            "Use: ",
-            "Tireless bot that can remove blocks",
-            "block placer",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack ATHENAS_KIMCHI = new SlimefunItemStack(
-            "ATHENAS_KIMCHI",
-            Material.TORCH,
-            "&4Athenas Kimchi",
-            "Use: ",
-            "Buff when eaten",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack SHIRO_TRAP = new SlimefunItemStack(
-            "SHIRO_TRAP",
-            Material.FERN,
-            "&4Shiro Trap",
-            "Use: ",
-            "Buff when eaten",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack YANYAN_AXE = new SlimefunItemStack(
-            "YANYAN_AXE",
-            Material.DIAMOND_AXE,
-            "&4YanYan Axe",
-            "Very hungry little axe",
-            "eats choco crystal and poop into",
-            "concentrated energy",
-            " ",
-            "One hit enemy"
-
-    );
-
-    public static final SlimefunItemStack SHIRODEX = new SlimefunItemStack(
-            "SHIRODEX",
-            Material.POTION,
-            "&4ShiroDex",
-            "&c+20% Choco"
-    );
-
-    public static final SlimefunItemStack SHIELDEAN = new SlimefunItemStack(
-            "SHIELDEAN",
-            Material.SHIELD,
-            "&4Shild ni dean",
-            "&c+20% Choco"
-    );
-
-    public static final SlimefunItemStack AFKEIMA_SWORD = new SlimefunItemStack(
-            "AFKEIMA_SWORD",
-            Material.WOODEN_SWORD,
-            "&4AFKeima Sword",
-            "Enemy will get AFK effect",
-            "and cannot move within",
-            "5 seconds"
-    );
-
-    public static final SlimefunItemStack BALUT = new SlimefunItemStack(
-            "EGGPENSIVE",
-            Material.EGG,
-            "&fEggPensive",
-            ""
-    );
-
-    public static final SlimefunItemStack PENOY = new SlimefunItemStack(
-            "EGGPENSIVE",
-            Material.EGG,
-            "&fEggPensive",
-            ""
-    );
-
-    public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
-            "TINAPANG_ITLOG",
-            Material.EGG,
-            "&fTinapang Itlog",
-            ""
-    );
 
     public static final SlimefunItemStack EGGPENSIVE = new SlimefunItemStack(
             "EGGPENSIVE",
@@ -431,57 +313,174 @@ public class ChocoItems {
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1), LoreBuilder.powerPerSecond(20)
     );
+
     public static final SlimefunItemStack MENARDZ_SMOKER = new SlimefunItemStack(
             "MENARDZ_SMOKER",
             Material.CAMPFIRE,
             "&eMenardz Smoker",
-            "");
-
-    public static final SlimefunItemStack PUTIK = new SlimefunItemStack(
-            "PUTIK",
-            Material.CLAY,
-            "&ePutik",
-            "");
-
-    public static final SlimefunItemStack PALAYOK = new SlimefunItemStack(
-            "PALAYOK",
-            Material.CLAY,
-            "&ePalayok",
-            "");
-
-    public static final SlimefunItemStack BATO = new SlimefunItemStack(
-            "BATO",
-            Material.CLAY,
-            "&eBato",
-            "");
-
-    public static final SlimefunItemStack TABO = new SlimefunItemStack(
-            "TABO",
-            Material.EGG,
-            "&fTabo",
             ""
     );
 
-    public static final SlimefunItemStack PALANGGANA = new SlimefunItemStack(
-            "PALANGANA",
+        public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
+            "TINAPANG_ITLOG",
             Material.EGG,
-            "&fPalanggana",
+            "&fTinapang Itlog",
             ""
     );
+//    public static final SlimefunItemStack PENOY = new SlimefunItemStack(
+//            "PENOY",
+//            Material.EGG,
+//            "&fEggPensive",
+//            ""
+//    );
+//
 
-    public static final SlimefunItemStack SAMPAYAN = new SlimefunItemStack(
-            "SAMPAYAN",
-            Material.EGG,
-            "&fSampayan",
-            ""
-    );
-
-    public static final SlimefunItemStack TUYO = new SlimefunItemStack(
-            "TUYO",
-            Material.EGG,
-            "&fTuyo",
-            ""
-    );
-
+//    public static final SlimefunItemStack PUTIK = new SlimefunItemStack(
+//            "PUTIK",
+//            Material.CLAY,
+//            "&ePutik",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack PALAYOK = new SlimefunItemStack(
+//            "PALAYOK",
+//            Material.CLAY,
+//            "&ePalayok",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack BATO = new SlimefunItemStack(
+//            "BATO",
+//            Material.CLAY,
+//            "&eBato",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack TABO = new SlimefunItemStack(
+//            "TABO",
+//            Material.EGG,
+//            "&fTabo",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack PALANGGANA = new SlimefunItemStack(
+//            "PALANGANA",
+//            Material.EGG,
+//            "&fPalanggana",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack SAMPAYAN = new SlimefunItemStack(
+//            "SAMPAYAN",
+//            Material.EGG,
+//            "&fSampayan",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack TUYO = new SlimefunItemStack(
+//            "TUYO",
+//            Material.EGG,
+//            "&fTuyo",
+//            ""
+//    );
+//
+//    public static final SlimefunItemStack JAIL_HAMMER = new SlimefunItemStack(
+//            "JAIL_HAMMER",
+//            Material.TORCH,
+//            "&4Jail Hammer",
+//            "Use: ",
+//            "and cannont move within",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack MULTONG_GHOST = new SlimefunItemStack(
+//            "MULTONG_GHOST",
+//            Material.TORCH,
+//            "&4Multong Ghost",
+//            "Use: ",
+//            "and cannont move within",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack BAAM_BRUSH = new SlimefunItemStack(
+//            "BAAM_BRUSH ",
+//            Material.TORCH,
+//            "&4Baam Brush",
+//            "Use: ",
+//            "and cannot interact",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack BAAM_PLACEXEL = new SlimefunItemStack(
+//            "BAAM_PLACEXEL ",
+//            Material.TORCH,
+//            "&4Baam Brush",
+//            "Use: ",
+//            "and cannot interact",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack BAAM_BOT = new SlimefunItemStack(
+//            "BAAM_BOT",
+//            Material.TORCH,
+//            "&4Baam Bot",
+//            "Use: ",
+//            "Tireless bot that can remove blocks",
+//            "block placer",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack ATHENAS_KIMCHI = new SlimefunItemStack(
+//            "ATHENAS_KIMCHI",
+//            Material.TORCH,
+//            "&4Athenas Kimchi",
+//            "Use: ",
+//            "Buff when eaten",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack SHIRO_TRAP = new SlimefunItemStack(
+//            "SHIRO_TRAP",
+//            Material.FERN,
+//            "&4Shiro Trap",
+//            "Use: ",
+//            "Buff when eaten",
+//            "5 seconds"
+//    );
+//
+//    public static final SlimefunItemStack YANYAN_AXE = new SlimefunItemStack(
+//            "YANYAN_AXE",
+//            Material.DIAMOND_AXE,
+//            "&4YanYan Axe",
+//            "Very hungry little axe",
+//            "eats choco crystal and poop into",
+//            "concentrated energy",
+//            " ",
+//            "One hit enemy"
+//
+//    );
+//
+//    public static final SlimefunItemStack SHIRODEX = new SlimefunItemStack(
+//            "SHIRODEX",
+//            Material.POTION,
+//            "&4ShiroDex",
+//            "&c+20% Choco"
+//    );
+//
+//    public static final SlimefunItemStack SHIELDEAN = new SlimefunItemStack(
+//            "SHIELDEAN",
+//            Material.SHIELD,
+//            "&4Shild ni dean",
+//            "&c+20% Choco"
+//    );
+//
+//    public static final SlimefunItemStack AFKEIMA_SWORD = new SlimefunItemStack(
+//            "AFKEIMA_SWORD",
+//            Material.WOODEN_SWORD,
+//            "&4AFKeima Sword",
+//            "Enemy will get AFK effect",
+//            "and cannot move within",
+//            "5 seconds"
+//    );
 
 }
