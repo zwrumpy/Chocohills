@@ -11,6 +11,10 @@
   * Ayan Crystal
   * Ghosting Goo
 
+**Machines**
+  * Menardz Smoker
+  * EggCooker
+
 **Item Transporters**
   * Arfy Fetch Up and Down - fast item transfer of vanilla storage
   * Keima Importer - transfer item from  Vanilla storage to SF machine input

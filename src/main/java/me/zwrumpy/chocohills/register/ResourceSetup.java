@@ -50,7 +50,7 @@ public class ResourceSetup {
 
         registerResource(ChocoItems.CHOCO_CARBON, new ItemStack[]{
                 ChocoItems.CHOCO_CRYSTAL, null, ChocoItems.CHOCO_CRYSTAL,
-                SlimefunItems.CARBON, new ItemStack(Material.DRAGON_EGG), SlimefunItems.CARBON,
+                SlimefunItems.CARBON, ChocoItems.EGGPENSIVE, SlimefunItems.CARBON,
                 ChocoItems.CHOCO_CRYSTAL, null, ChocoItems.CHOCO_CRYSTAL
         });
 

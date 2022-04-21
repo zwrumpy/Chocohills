@@ -3,6 +3,7 @@ package me.zwrumpy.chocohills.machine;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotHopperable;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
@@ -12,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class EggCooker extends AContainer implements RecipeDisplayItem {
+public class EggCooker extends AContainer implements RecipeDisplayItem, NotHopperable {
 
     @ParametersAreNonnullByDefault
     public EggCooker(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -21,7 +22,7 @@ public class EggCooker extends AContainer implements RecipeDisplayItem {
 
     @Override
     protected void registerDefaultRecipes() {
-        registerRecipe(60, new ItemStack[]{SlimefunItems.CARBON_CHUNK,new ItemStack(Material.EGG) }, new ItemStack[]{ChocoItems.EGGPENSIVE});
+        registerRecipe(900, new ItemStack[]{SlimefunItems.CARBON_CHUNK,new ItemStack(Material.EGG) }, new ItemStack[]{ChocoItems.EGGPENSIVE});
     }
 
     @Override

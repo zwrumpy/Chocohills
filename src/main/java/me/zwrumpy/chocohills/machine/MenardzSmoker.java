@@ -93,5 +93,4 @@ public class MenardzSmoker extends MultiBlockMachine {
             }, i * 20L);
         }
     }
-
 }
