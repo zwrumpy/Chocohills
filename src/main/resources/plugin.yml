@@ -7,6 +7,6 @@ depend:
 - Slimefun
 commands:
   chtool:
-    description:
-    usage: /<command>
+    description: debugger
+    usage: /chtool
     permission: chtool.use

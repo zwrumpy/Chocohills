@@ -28,24 +28,19 @@ public class TorchInteract implements Listener{
         if (!(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)) return;
         if (isItemEmpty(e.getItem())) return;
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
-        if (!isSfItem("TORCHTILLAS", item)) return;
+        if (!isTorchtillas(item)) return;
         if (e.getPlayer().getPotionEffect(PotionEffectType.NIGHT_VISION) != null) return;
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
     }
 
     @ParametersAreNonnullByDefault
-    boolean isSfItem(String SfItemId, ItemStack item){
+    boolean isTorchtillas(ItemStack item){
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem == null) return false;
-        if (sfItem.getId() == null) return false;
-        if (!sfItem.getId().contains(SfItemId)) return false;
-        return true;
+        return sfItem.getId().contains("TORCHTILLAS");
     }
 
     boolean isItemEmpty(@Nonnull ItemStack item){
-        if (item == null) return true;
-        if (item.getType() == null) return true;
-        if (item.getType() == Material.AIR) return true;
-        return false;
+        return item.getType() == Material.AIR;
     }
 }

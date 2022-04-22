@@ -12,13 +12,9 @@ public class ItemChecker {
     public static boolean isSfItem(String SfItemId, ItemStack item){
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem == null) return false;
-        if (sfItem.getId() == null) return false ;
-        if (!sfItem.getId().contains(SfItemId)) return false;
-        return true;
+        return sfItem.getId().contains(SfItemId);
     }
     public static boolean isItemEmpty(@Nonnull ItemStack item){
-        if (item == null) return true;
-        if (item.getType() == Material.AIR) return true;
-        return false;
+        return item.getType() == Material.AIR;
     }
 }

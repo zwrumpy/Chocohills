@@ -18,7 +18,7 @@
 **Item Transporters**
   * Arfy Fetch Up and Down - fast item transfer of vanilla storage
   * Keima Importer - transfer item from  Vanilla storage to SF machine input
-  * Keima Exporter - transfer item from SF machine ouput to Vanilla storage
+  * Keima Exporter - transfer item from SF machine output to Vanilla storage
 
 **Tools**
   * Torchtillas - unlimited night vision torch 
@@ -28,4 +28,4 @@
   * Arfwooferite - netherite generator
   * Arfbon - carbon generator
   * AyanCluster - amethyst cluster generator
-  * Drt Goo - strage nether goo generator
+  * Drt Goo - strange nether goo generator

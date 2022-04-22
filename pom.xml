@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.zwrumpy.chocohills</groupId>
     <artifactId>Chocohills</artifactId>
-    <version>0.24</version>
+    <version>0.25</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -18,12 +18,10 @@
             <id>paper-repo</id>
             <url>https://repo.destroystokyo.com/repository/maven-public/</url>
         </repository>
-
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -44,6 +42,18 @@
                 </includes>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <!-- your plugin folder location -->
+                    <outputDirectory>F:\server\1.17.1 Minimal\plugins</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+
     </build>
 
     <dependencies>

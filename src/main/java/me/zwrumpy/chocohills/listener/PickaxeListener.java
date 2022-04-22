@@ -29,7 +29,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 public class PickaxeListener implements Listener {
     private JavaPlugin plugin;
-    private final HashMap<Player, BlockFace> blockfaceMap;
+    private HashMap<Player, BlockFace> blockfaceMap;
     private BlockSelection selection;
     private ToolType tool;
     private BlockType blockType;
@@ -69,6 +69,7 @@ public class PickaxeListener implements Listener {
         }
 
         SlimefunItem sfItem = SlimefunItem.getByItem(player.getInventory().getItemInMainHand());
+        assert sfItem != null;
         int level = getLevel(sfItem);
         processBlocks(e.getBlock(), player, level);
         this.blockfaceMap.remove(player);
@@ -98,6 +99,7 @@ public class PickaxeListener implements Listener {
                 .thenApply(filteredBlocks -> blockEdit.filterProtectedBlocks(filteredBlocks, player))
                 .thenAccept(filteredProtectedBlocks -> processBlockDrops(filteredProtectedBlocks, world));
     }
+
     @ParametersAreNonnullByDefault
     void processBlockDrops(List<Block> blocks, final World world) {
         (new BukkitRunnable() {
@@ -106,10 +108,5 @@ public class PickaxeListener implements Listener {
                 blockEdit.removeBlocks(blocks);
             }
         }).runTask(plugin);
-    }
-
-    void log(String string) {
-        if (plugin.getConfig().getBoolean("debug") == true)
-            Bukkit.getLogger().log(Level.INFO, string);
     }
 }

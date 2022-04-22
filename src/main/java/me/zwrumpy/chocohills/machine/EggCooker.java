@@ -11,6 +11,7 @@ import me.zwrumpy.chocohills.register.ChocoItems;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class EggCooker extends AContainer implements RecipeDisplayItem, NotHopperable {
@@ -25,9 +26,10 @@ public class EggCooker extends AContainer implements RecipeDisplayItem, NotHoppe
         registerRecipe(900, new ItemStack[]{SlimefunItems.CARBON_CHUNK, ChocoItems.TINAPANG_ITLOG }, new ItemStack[]{ChocoItems.EGGPENSIVE});
     }
 
+    @Nonnull
     @Override
     public String getMachineIdentifier() {
-        return "EGGCOOKER";
+        return "EGG_COOKER";
     }
 
     @Override

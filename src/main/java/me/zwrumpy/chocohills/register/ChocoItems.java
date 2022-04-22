@@ -128,72 +128,6 @@ public class ChocoItems {
             "&e&lChoco Ingot",  ""
     );
 
-    public static final SlimefunItemStack ARFWOOFERITE = new SlimefunItemStack(
-            "ARFWOOFERITE",
-            Material.ANCIENT_DEBRIS,
-            "&4&lArf Wooferite Gen",
-            "&fDr. Arf discovered wooferite",
-            "&funder boneloo shrine",
-            "&fof woof clan",
-            " ",
-            "&7Usage:",
-            "&fNetherite Generator",
-            "&7Rate: &f1 &7netherite ingot",
-            "&7Time: &f5 &7minutes",
-            " ",
-            "&7Setup:",
-            "&fPlace Chest on top of this block"
-    );
-
-    public static final SlimefunItemStack ARFBON = new SlimefunItemStack(
-            "ARFBON",
-            Material.BASALT,
-            "&8&lArfbon Generator",
-            "&fUpon discovery of wooferite",
-            "&fDr Arf experimented and found more ways",
-            "&fto use this material and developed new arfbon",
-            " ",
-            "&7Usage:",
-            "&fCarbon Generator",
-            "&7Rate: &f64 &7carbon",
-            "&7Time: &f30 &7seconds",
-            " ",
-            "&7Setup:",
-            "&fPlace Chest on top of this block"
-    );
-
-    public static final SlimefunItemStack AYANCLUSTER = new SlimefunItemStack(
-            "AYANCLUSTER",
-            Material.AMETHYST_BLOCK,
-            "&5&lAyanCluster Generator",
-            "&fDr Arf assistant Ayan stumble",
-            "&fupon new wooferite maliability",
-            "&fnow can generate Amethyst Cluster",
-            " ",
-            "&7Usage:",
-            "&fCarbon Generator",
-            "&7Rate: &f16 &7Amethyst Cluster",
-            "&7Time: &f2 &7minutes",
-            " ",
-            "&7Setup:",
-            "&fPlace Chest on top of this block"
-    );
-
-    public static final SlimefunItemStack DRTGOO = new SlimefunItemStack(
-            "DRTGOO",
-            Material.BUBBLE_CORAL_BLOCK,
-            "&d&lDrt Goo",
-            "&fNew Ayancluster liquid mix",
-            "&faccelerates its material regeneration",
-            " ",
-            "&7Usage:",
-            "&fStrange Nether Goo Generator",
-            "&7Rate: &f8 &7Goo",
-            "&7Time: &f3 &7minutes",
-            " ",
-            "&7Setup:",
-            "&fPlace Chest on top of this block"
-    );
 
     public static final SlimefunItemStack KEIMAEXPORTER = new SlimefunItemStack(
             "KEIMAEXPORTER",
@@ -303,8 +237,8 @@ public class ChocoItems {
             ""
     );
 
-    public static final SlimefunItemStack EGGCOOKER = new SlimefunItemStack(
-            "EGGCOOKER",
+    public static final SlimefunItemStack EGG_COOKER = new SlimefunItemStack(
+            "EGG_COOKER",
             Material.SMOKER,
             "&eEgg Cooker",
             "",
@@ -323,167 +257,91 @@ public class ChocoItems {
 
     );
 
-        public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
+    public static final SlimefunItemStack TINAPANG_ITLOG = new SlimefunItemStack(
             "TINAPANG_ITLOG",
             Material.EGG,
             "&fTinapang Itlog",
             ""
     );
 
-//    public static final SlimefunItemStack PENOY = new SlimefunItemStack(
-//            "PENOY",
-//            Material.EGG,
-//            "&fEggPensive",
-//            ""
-//    );
-//
 
-//    public static final SlimefunItemStack PUTIK = new SlimefunItemStack(
-//            "PUTIK",
-//            Material.CLAY,
-//            "&ePutik",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack PALAYOK = new SlimefunItemStack(
-//            "PALAYOK",
-//            Material.CLAY,
-//            "&ePalayok",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack BATO = new SlimefunItemStack(
-//            "BATO",
-//            Material.CLAY,
-//            "&eBato",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack TABO = new SlimefunItemStack(
-//            "TABO",
-//            Material.EGG,
-//            "&fTabo",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack PALANGGANA = new SlimefunItemStack(
-//            "PALANGANA",
-//            Material.EGG,
-//            "&fPalanggana",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack SAMPAYAN = new SlimefunItemStack(
-//            "SAMPAYAN",
-//            Material.EGG,
-//            "&fSampayan",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack TUYO = new SlimefunItemStack(
-//            "TUYO",
-//            Material.EGG,
-//            "&fTuyo",
-//            ""
-//    );
-//
-//    public static final SlimefunItemStack JAIL_HAMMER = new SlimefunItemStack(
-//            "JAIL_HAMMER",
-//            Material.TORCH,
-//            "&4Jail Hammer",
-//            "Use: ",
-//            "and cannont move within",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack MULTONG_GHOST = new SlimefunItemStack(
-//            "MULTONG_GHOST",
-//            Material.TORCH,
-//            "&4Multong Ghost",
-//            "Use: ",
-//            "and cannont move within",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack BAAM_BRUSH = new SlimefunItemStack(
-//            "BAAM_BRUSH ",
-//            Material.TORCH,
-//            "&4Baam Brush",
-//            "Use: ",
-//            "and cannot interact",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack BAAM_PLACEXEL = new SlimefunItemStack(
-//            "BAAM_PLACEXEL ",
-//            Material.TORCH,
-//            "&4Baam Brush",
-//            "Use: ",
-//            "and cannot interact",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack BAAM_BOT = new SlimefunItemStack(
-//            "BAAM_BOT",
-//            Material.TORCH,
-//            "&4Baam Bot",
-//            "Use: ",
-//            "Tireless bot that can remove blocks",
-//            "block placer",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack ATHENAS_KIMCHI = new SlimefunItemStack(
-//            "ATHENAS_KIMCHI",
-//            Material.TORCH,
-//            "&4Athenas Kimchi",
-//            "Use: ",
-//            "Buff when eaten",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack SHIRO_TRAP = new SlimefunItemStack(
-//            "SHIRO_TRAP",
-//            Material.FERN,
-//            "&4Shiro Trap",
-//            "Use: ",
-//            "Buff when eaten",
-//            "5 seconds"
-//    );
-//
-//    public static final SlimefunItemStack YANYAN_AXE = new SlimefunItemStack(
-//            "YANYAN_AXE",
-//            Material.DIAMOND_AXE,
-//            "&4YanYan Axe",
-//            "Very hungry little axe",
-//            "eats choco crystal and poop into",
-//            "concentrated energy",
-//            " ",
-//            "One hit enemy"
-//
-//    );
-//
-//    public static final SlimefunItemStack SHIRODEX = new SlimefunItemStack(
-//            "SHIRODEX",
-//            Material.POTION,
-//            "&4ShiroDex",
-//            "&c+20% Choco"
-//    );
-//
-//    public static final SlimefunItemStack SHIELDEAN = new SlimefunItemStack(
-//            "SHIELDEAN",
-//            Material.SHIELD,
-//            "&4Shild ni dean",
-//            "&c+20% Choco"
-//    );
-//
-//    public static final SlimefunItemStack AFKEIMA_SWORD = new SlimefunItemStack(
-//            "AFKEIMA_SWORD",
-//            Material.WOODEN_SWORD,
-//            "&4AFKeima Sword",
-//            "Enemy will get AFK effect",
-//            "and cannot move within",
-//            "5 seconds"
-//    );
+    public static final SlimefunItemStack ARFWOOFERITE = new SlimefunItemStack(
+            "ARFWOOFERITE",
+            Material.ANCIENT_DEBRIS,
+            "&4&lArf Wooferite Gen",
+            "&fDr. Arf discovered wooferite",
+            "&funder boneloo shrine",
+            "&fof woof clan",
+            " ",
+            "&7Usage:",
+            "&fNetherite Generator",
+            "&7Rate: &f1 &7netherite ingot",
+            "&7Time: &f5 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
 
+    public static final SlimefunItemStack ARFBON = new SlimefunItemStack(
+            "ARFBON",
+            Material.BASALT,
+            "&8&lArfbon Generator",
+            "&fUpon discovery of wooferite",
+            "&fDr Arf experimented and found more ways",
+            "&fto use this material and developed new arfbon",
+            " ",
+            "&7Usage:",
+            "&fCarbon Generator",
+            "&7Rate: &f64 &7carbon",
+            "&7Time: &f30 &7seconds",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack AYANCLUSTER = new SlimefunItemStack(
+            "AYANCLUSTER",
+            Material.AMETHYST_BLOCK,
+            "&5&lAyanCluster Generator",
+            "&fDr Arf assistant Ayan stumble",
+            "&fupon new wooferite maliability",
+            "&fnow can generate Amethyst Cluster",
+            " ",
+            "&7Usage:",
+            "&fCarbon Generator",
+            "&7Rate: &f16 &7Amethyst Cluster",
+            "&7Time: &f2 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack DRTGOO = new SlimefunItemStack(
+            "DRTGOO",
+            Material.BUBBLE_CORAL_BLOCK,
+            "&d&lDrt Goo",
+            "&fNew Ayancluster liquid mix",
+            "&faccelerates its material regeneration",
+            " ",
+            "&7Usage:",
+            "&fStrange Nether Goo Generator",
+            "&7Rate: &f8 &7Goo",
+            "&7Time: &f3 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack REMI_DIAS = new SlimefunItemStack(
+            "REMI_DIAS",
+            Material.DIAMOND_ORE,
+            "&fRemi Dias",
+            "&7Usage:",
+            "&fDiamond Generator",
+            "&7Rate: &f1 &7Diamond",
+            "&7Time: &f15 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
 }

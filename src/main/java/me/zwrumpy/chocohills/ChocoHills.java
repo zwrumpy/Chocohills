@@ -7,6 +7,8 @@ import me.zwrumpy.chocohills.listener.TorchInteract;
 import me.zwrumpy.chocohills.register.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class ChocoHills extends JavaPlugin implements SlimefunAddon {
     private static ChocoHills instance;
 
@@ -26,7 +28,7 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
     }
 
     void registerCommands(){
-        this.getCommand("chtool").setExecutor(new ToolCommand());
+        Objects.requireNonNull(this.getCommand("chtool")).setExecutor(new ToolCommand());
     }
 
     void registerListeners(){

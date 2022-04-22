@@ -21,7 +21,7 @@ public class MachineSetup {
         new MenardzSmoker(ChocoItems.CH_MACHINES, ChocoItems.MENARDZ_SMOKER)
                 .register(addon);
 
-        new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.EGGCOOKER, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.EGG_COOKER, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         ChocoItems.TINAPANG_ITLOG, SlimefunItems.ELECTRIC_MOTOR, ChocoItems.TINAPANG_ITLOG,
                         SlimefunItems.CARBON, ChocoItems.AYANSHARD, SlimefunItems.CARBON,
