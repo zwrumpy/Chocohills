@@ -12,9 +12,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class TorchInteract implements Listener{
     private JavaPlugin plugin;
-    int minutes30 = 30 * (60 * 20);
+    private int minutes30 = 30 * (60 * 20);
 
     public TorchInteract(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -30,6 +33,7 @@ public class TorchInteract implements Listener{
         e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, minutes30, 0));
     }
 
+    @ParametersAreNonnullByDefault
     boolean isSfItem(String SfItemId, ItemStack item){
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
         if (sfItem == null) return false;
@@ -38,7 +42,7 @@ public class TorchInteract implements Listener{
         return true;
     }
 
-    boolean isItemEmpty(ItemStack item){
+    boolean isItemEmpty(@Nonnull ItemStack item){
         if (item == null) return true;
         if (item.getType() == null) return true;
         if (item.getType() == Material.AIR) return true;
