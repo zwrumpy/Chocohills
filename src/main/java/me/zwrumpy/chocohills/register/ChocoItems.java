@@ -241,7 +241,9 @@ public class ChocoItems {
             "EGG_COOKER",
             Material.SMOKER,
             "&eEgg Cooker",
-            "",
+            "&7Usage",
+            "&fMakes tinapang itlog",
+            "&finto eggpensive",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
             LoreBuilder.powerPerSecond(20)
