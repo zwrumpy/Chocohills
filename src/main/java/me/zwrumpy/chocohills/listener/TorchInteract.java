@@ -41,6 +41,8 @@ public class TorchInteract implements Listener{
     }
 
     boolean isItemEmpty(@Nonnull ItemStack item){
-        return item.getType() == Material.AIR;
+        if (item.getType() == null) return true;
+        if (item.getType() == Material.AIR) return true;
+        return false;
     }
 }
