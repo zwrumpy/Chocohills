@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.zwrumpy.chocohills</groupId>
     <artifactId>Chocohills</artifactId>
-    <version>0.28</version>
+    <version>0.29</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -42,17 +42,17 @@
                 </includes>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version>
-                <configuration>
-                    <!-- your plugin folder location -->
-                    <outputDirectory>F:\server\1.17.1 Minimal\plugins</outputDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--                <version>3.2.2</version>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; your plugin folder location &ndash;&gt;-->
+<!--                    <outputDirectory>E:\1.17.1 Minimal\plugins</outputDirectory>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
 
     </build>
 
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-30</version>
+            <version>RC-28</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -87,7 +87,7 @@
         <dependency>
             <groupId>com.github.seeseemelk</groupId>
             <artifactId>MockBukkit-v1.16</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.2</version>
             <scope>test</scope>
         </dependency>
 

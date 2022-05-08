@@ -128,7 +128,6 @@ public class ChocoItems {
             "&e&lChoco Ingot",  ""
     );
 
-
     public static final SlimefunItemStack KEIMAEXPORTER = new SlimefunItemStack(
             "KEIMAEXPORTER",
             Material.SLIME_BLOCK,
@@ -337,7 +336,7 @@ public class ChocoItems {
     public static final SlimefunItemStack REMI_DIAS = new SlimefunItemStack(
             "REMI_DIAS",
             Material.DIAMOND_ORE,
-            "&fRemi Dias",
+            "&b&lRemi Dias",
             "&7Usage:",
             "&fDiamond Generator",
             "&7Rate: &f1 &7Diamond",

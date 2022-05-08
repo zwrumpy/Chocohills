@@ -78,8 +78,7 @@ public class PickaxeListener implements Listener {
     boolean isBlastxelOnHand(@Nonnull Player player) {
         SlimefunItem sfItem = SlimefunItem.getByItem(player.getInventory().getItemInMainHand());
         if (sfItem == null) return false;
-        if (!sfItem.getId().contains("BLASTXEL")) return false;
-        return true;
+        return sfItem.getId().contains("BLASTXEL");
     }
 
     int getLevel(@Nonnull SlimefunItem item) {

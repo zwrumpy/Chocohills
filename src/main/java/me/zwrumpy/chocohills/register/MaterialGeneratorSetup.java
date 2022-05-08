@@ -58,16 +58,6 @@ public class MaterialGeneratorSetup {
                 .setRate(6, 180)
                 .register(addon);
 
-        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DRTGOO, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{
-                        null, SlimefunItems.ENERGIZED_CAPACITOR, null,
-                        SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
-                        ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
-                })
-                .setItem(SlimefunItems.STRANGE_NETHER_GOO,8)
-                .setRate(6, 180)
-                .register(addon);
-
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.REMI_DIAS, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null, SlimefunItems.ENERGIZED_CAPACITOR, null,
