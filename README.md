@@ -12,8 +12,8 @@
   * Ghosting Goo
 
 **Machines**
-  * Menardz Smoker
-  * EggCooker
+  * Menardz Smoker - makes chicken egg into tinapang itlog
+  * EggCooker - makes tinapang itlog into eggpensive
 
 **Item Transporters**
   * Arfy Fetch Up and Down - fast item transfer of vanilla storage

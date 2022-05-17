@@ -254,7 +254,9 @@ public class ChocoItems {
             "&eMenardz Smoker",
             "&7",
             "&7Usage:",
-            "&7Makes Tinapa"
+            "&7Makes chicken egg into",
+            "Tinapang itlog"
+
 
     );
 
