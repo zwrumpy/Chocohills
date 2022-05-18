@@ -7,6 +7,7 @@ import me.zwrumpy.chocohills.listener.TorchInteract;
 import me.zwrumpy.chocohills.register.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.annotation.Nonnull;
 import java.util.Objects;
 
 public class ChocoHills extends JavaPlugin implements SlimefunAddon {
@@ -38,5 +39,6 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
 
     public static ChocoHills getInstance() {return instance;}
     public String getBugTrackerURL() {return null;}
+    @Nonnull
     public JavaPlugin getJavaPlugin() {return this;}
 }

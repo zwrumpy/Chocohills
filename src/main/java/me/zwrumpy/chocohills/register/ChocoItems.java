@@ -241,8 +241,8 @@ public class ChocoItems {
             Material.SMOKER,
             "&eEgg Cooker",
             "&7Usage",
-            "&fMakes tinapang itlog",
-            "&finto eggpensive",
+            "&fCarbon chunk &8+ &fTinapang itlog",
+            "&f&8= &aEggpensive",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
             LoreBuilder.powerPerSecond(20)
@@ -254,8 +254,8 @@ public class ChocoItems {
             "&eMenardz Smoker",
             "&7",
             "&7Usage:",
-            "&7Makes chicken egg into",
-            "Tinapang itlog"
+            "&fMakes chicken egg into",
+            "&fTinapang itlog"
 
 
     );

@@ -30,7 +30,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class PickaxeListener implements Listener {
     private JavaPlugin plugin;
     private HashMap<Player, BlockFace> blockfaceMap;
-    private BlockSelection selection;
+    private final BlockSelection selection;
     private ToolType tool;
     private BlockType blockType;
     private BlockEdit blockEdit;
