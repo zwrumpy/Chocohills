@@ -66,13 +66,13 @@ public class ResourceSetup {
                 null, SlimefunItems.STRANGE_NETHER_GOO, ChocoItems.CHOCO_CRYSTAL
         });
 
-        registerNoCraftItem(ChocoItems.EGGPENSIVE, new ItemStack[]{
+        registerEggCooker(ChocoItems.EGGPENSIVE, new ItemStack[]{
                 SlimefunItems.CARBON_CHUNK, ChocoItems.TINAPANG_ITLOG, null,
                 null, null, null,
                 null, null, null
         });
 
-        registerNoCraftItem(ChocoItems.TINAPANG_ITLOG, new ItemStack[]{
+        registerMenardSmoker(ChocoItems.TINAPANG_ITLOG, new ItemStack[]{
                 new ItemStack(Material.EGG), null,
                 null, null, null,
                 null, null, null
@@ -83,7 +83,11 @@ public class ResourceSetup {
         new UnplaceableBlock(ChocoItems.CH_RESOURCES, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(this.addon);
     }
 
-    void registerNoCraftItem(SlimefunItemStack stack, ItemStack[] recipe) {
-        new UnplaceableBlock(ChocoItems.CH_RESOURCES, stack, RecipeType.NULL, recipe).register(this.addon);
+    void registerMenardSmoker(SlimefunItemStack stack, ItemStack[] recipe) {
+        new UnplaceableBlock(ChocoItems.CH_RESOURCES, stack, new RecipeType(ChocoItems.MENARDZ_SMOKER, ChocoItems.EGG_COOKER.getItemId()), recipe).register(this.addon);
+    }
+
+    void registerEggCooker(SlimefunItemStack stack, ItemStack[] recipe) {
+        new UnplaceableBlock(ChocoItems.CH_RESOURCES, stack, new RecipeType(ChocoItems.EGG_COOKER, ChocoItems.EGG_COOKER.getItemId()), recipe).register(this.addon);
     }
 }
