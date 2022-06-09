@@ -64,8 +64,8 @@ public class MaterialGeneratorSetup {
                         ChocoItems.CHOCO_CARBON, ChocoItems.HYPER_CRYSTAL,  ChocoItems.CHOCO_CARBON,
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
-                .setItem(Material.DIAMOND,1)
-                .setRate(6, 500)
+                .setItem(Material.DIAMOND,2)
+                .setRate(6, 600)
                 .register(addon);
     }
 }

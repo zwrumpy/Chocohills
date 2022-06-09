@@ -341,8 +341,8 @@ public class ChocoItems {
             "&b&lRemi Dias",
             "&7Usage:",
             "&fDiamond Generator",
-            "&7Rate: &f1 &7Diamond",
-            "&7Time: &f15 &7minutes",
+            "&7Rate: &f2 &7Diamond",
+            "&7Time: &f10 &7minutes",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"
