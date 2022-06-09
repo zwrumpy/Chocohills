@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import me.zwrumpy.chocohills.util.block.BlockEdit;
-import me.zwrumpy.chocohills.util.block.BlockSelection;
-import me.zwrumpy.chocohills.util.block.BlockType;
+import me.zwrumpy.chocohills.tools.block.BlockEdit;
+import me.zwrumpy.chocohills.tools.block.BlockSelection;
+import me.zwrumpy.chocohills.tools.block.BlockType;
 import me.zwrumpy.chocohills.util.tool.ToolType;
 import org.bukkit.Material;
 import org.bukkit.World;

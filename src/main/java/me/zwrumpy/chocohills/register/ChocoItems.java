@@ -20,7 +20,7 @@ public class ChocoItems {
     public static final SubItemGroup CH_TOOLS = subGroup("CH_TOOLS", "Tools", Material.NETHERITE_PICKAXE);
     public static final SubItemGroup CH_GENERATOR = subGroup("CH_GENERATOR", "Generator", Material.ANCIENT_DEBRIS);
     public static final SubItemGroup CH_MACHINES = subGroup("CH_MACHINES", "Machines", Material.HONEY_BLOCK);
-    //public static final ItemGroup CH_GROUP = new ItemGroup(new NamespacedKey(ChocoHills.getInstance(), "CH_GROUP"), new CustomItemStack(Material.SUNFLOWER, "&e&lChocoHills"));
+
 
     static SubItemGroup subGroup( String namespaceKey, String name, Material icon){
         return new SubItemGroup(new NamespacedKey(ChocoHills.getInstance(), namespaceKey), CH_GENERAL,new CustomItemStack(icon, name));

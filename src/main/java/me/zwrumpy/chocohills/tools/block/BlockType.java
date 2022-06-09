@@ -1,6 +1,5 @@
-package me.zwrumpy.chocohills.util.block;
+package me.zwrumpy.chocohills.tools.block;
 
-import java.util.logging.Level;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

@@ -3,9 +3,8 @@ package me.zwrumpy.chocohills.register;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.transporter.*;
+import me.zwrumpy.chocohills.machine.transporter.*;
 import org.bukkit.inventory.ItemStack;
 
 public class TransporterSetup {
@@ -25,6 +24,7 @@ public class TransporterSetup {
                         ChocoItems.COMPRESSED_CRYSTAL, ChocoItems.TORCHTILLAS, null
                 }
         ).register(addon);
+
         new MaterialExporterDown(ChocoItems.CH_MACHINES, ChocoItems.KEIMAEXPORTER_DOWN, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null, null, ChocoItems.CHOCO_CRYSTAL,
