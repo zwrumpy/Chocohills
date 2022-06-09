@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.listener;
+package me.zwrumpy.chocohills.tools.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

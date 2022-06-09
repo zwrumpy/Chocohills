@@ -2,8 +2,8 @@ package me.zwrumpy.chocohills.register;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import me.zwrumpy.chocohills.ChocoHills;
+import me.zwrumpy.chocohills.tools.Tools;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -42,6 +42,6 @@ public class ToolSetup {
     }
 
     void registerTools(SlimefunItemStack stack, ItemStack[] recipe) {
-        new UnplaceableBlock(ChocoItems.CH_TOOLS, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(this.addon);
+        new Tools(ChocoItems.CH_TOOLS, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(this.addon);
     }
 }

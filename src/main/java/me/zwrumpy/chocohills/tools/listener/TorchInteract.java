@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.listener;
+package me.zwrumpy.chocohills.tools.listener;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import org.bukkit.Bukkit;
