@@ -51,7 +51,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
 
     private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 31, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
     private static final int[] BORDER_IN = { 9, 10, 11, 12, 18, 20, 27, 28, 29, 30 };
-    private static final int[] BORDER_OUT = { 14, 15, 16, 17, 23, 24,26, 32, 33, 34, 35 };
+    private static final int[] BORDER_OUT = { 14, 15, 16, 17, 23, 24, 26, 32, 33, 34, 35 };
 
     protected final List<MachineRecipe> recipes = new ArrayList<>();
     private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
