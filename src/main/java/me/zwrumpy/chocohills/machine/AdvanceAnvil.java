@@ -18,35 +18,24 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class AdvanceAnvil extends AnvilAbstract implements RecipeDisplayItem, NotHopperable {
 
 
-
     @ParametersAreNonnullByDefault
     public AdvanceAnvil(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
     @Override
-    protected void registerDefaultRecipes() {
-        registerRecipe(900, new ItemStack[]{SlimefunItems.CARBON_CHUNK, ChocoItems.TINAPANG_ITLOG }, new ItemStack[]{ChocoItems.EGGPENSIVE});
-    }
-
-    @Override
     public int[] getInputSlots() {
-        return new int[] { 19, 21 };
+        return new int[]{19, 21};
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] { 25 };
+        return new int[]{25};
     }
 
     @Nonnull
     @Override
     public String getMachineIdentifier() {
         return "CHOCO_ADVANCE_ANVIL";
-    }
-
-    @Override
-    public ItemStack getProgressBar() {
-        return new ItemStack(Material.DIAMOND_PICKAXE);
     }
 }

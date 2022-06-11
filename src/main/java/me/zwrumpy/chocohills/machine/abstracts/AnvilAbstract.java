@@ -1,21 +1,25 @@
 package me.zwrumpy.chocohills.machine.abstracts;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import com.google.common.collect.MapDifference;
+import com.google.common.collect.Maps;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
+import me.zwrumpy.chocohills.ChocoHills;
+import me.zwrumpy.chocohills.util.Util;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -45,13 +49,14 @@ import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
+import org.bukkit.inventory.meta.ItemMeta;
 
-// TODO: Replace this with "AbstractContainer" and "AbstractElectricalMachine" classes.
 public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
-    private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 31, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
-    private static final int[] BORDER_IN = { 9, 10, 11, 12, 18, 20, 27, 28, 29, 30 };
-    private static final int[] BORDER_OUT = { 14, 15, 16, 17, 23, 24, 26, 32, 33, 34, 35 };
+    protected static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
+    protected  static final int[] BORDER_IN = { 9, 10, 11, 12, 13, 18, 20, 22, 31, 27, 28, 29, 30 };
+    protected  static final int[] BORDER_OUT = {15, 16, 17, 24, 26, 33, 34, 35 };
 
     protected final List<MachineRecipe> recipes = new ArrayList<>();
     private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
@@ -60,13 +65,15 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     private int energyCapacity = -1;
     private int processingSpeed = -1;
 
+
+    private static final Map<Enchantment, Integer> MAX_LEVELS = Util.getEnchants(Objects.requireNonNull(
+            ChocoHills.getInstance().getConfig().getConfigurationSection("advanced-anvil-max-levels")
+    ));
+
     @ParametersAreNonnullByDefault
     protected AnvilAbstract(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
-
-        processor.setProgressBar(getProgressBar());
         createPreset(this, getInventoryTitle(), this::constructMenu);
-
         addItemHandler(onBlockBreak());
     }
 
@@ -82,17 +89,10 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
                     inv.dropItems(b.getLocation(), getInputSlots());
                     inv.dropItems(b.getLocation(), getOutputSlots());
                 }
-
                 processor.endOperation(b);
             }
 
         };
-    }
-
-    @ParametersAreNonnullByDefault
-    protected AnvilAbstract(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
-        this(itemGroup, item, recipeType, recipe);
-        this.recipeOutput = recipeOutput;
     }
 
     @Override
@@ -113,7 +113,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
             preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(23, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : getOutputSlots()) {
             preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
@@ -131,67 +131,21 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
         }
     }
 
-    /**
-     * This method returns the title that is used for the {@link Inventory} of an
-     * {@link AContainer} that has been opened by a Player.
-     *
-     * Override this method to set the title.
-     *
-     * @return The title of the {@link Inventory} of this {@link AContainer}
-     */
     @Nonnull
     public String getInventoryTitle() {
-        return getItemName();
+        return "Choco Advance Anvil";
     }
 
-    /**
-     * This method returns the {@link ItemStack} that this {@link AContainer} will
-     * use as a progress bar.
-     *
-     * Override this method to set the progress bar.
-     *
-     * @return The {@link ItemStack} to use as the progress bar
-     */
-    public abstract ItemStack getProgressBar();
-
-    /**
-     * This method returns the max amount of electricity this machine can hold.
-     *
-     * @return The max amount of electricity this Block can store.
-     */
     @Override
     public int getCapacity() {
         return energyCapacity;
     }
-
-    /**
-     * This method returns the amount of energy that is consumed per operation.
-     *
-     * @return The rate of energy consumption
-     */
     public int getEnergyConsumption() {
         return energyConsumedPerTick;
     }
-
-    /**
-     * This method returns the speed at which this machine will operate.
-     * This can be implemented on an instantiation-level to create different tiers
-     * of machines.
-     *
-     * @return The speed of this machine
-     */
     public int getSpeed() {
         return processingSpeed;
     }
-
-    /**
-     * This sets the energy capacity for this machine.
-     * This method <strong>must</strong> be called before registering the item
-     * and only before registering.
-     *
-     * @param capacity The amount of energy this machine can store
-     * @return This method will return the current instance of {@link AContainer}, so that can be chained.
-     */
     public final AnvilAbstract setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
 
@@ -202,31 +156,15 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
             throw new IllegalStateException("You cannot modify the capacity after the Item was registered.");
         }
     }
-
-    /**
-     * This sets the speed of this machine.
-     *
-     * @param speed The speed multiplier for this machine, must be above zero
-     * @return This method will return the current instance of {@link AContainer}, so that can be chained.
-     */
     public final AnvilAbstract setProcessingSpeed(int speed) {
         Validate.isTrue(speed > 0, "The speed must be greater than zero!");
-
         this.processingSpeed = speed;
         return this;
     }
-
-    /**
-     * This method sets the energy consumed by this machine per tick.
-     *
-     * @param energyConsumption The energy consumed per tick
-     * @return This method will return the current instance of {@link AContainer}, so that can be chained.
-     */
     public final AnvilAbstract setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
         Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
         Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
-
         this.energyConsumedPerTick = energyConsumption;
         return this;
     }
@@ -258,30 +196,11 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
         registerDefaultRecipes();
     }
 
-    /**
-     * This method returns an internal identifier that is used to identify this {@link AContainer}
-     * and its recipes.
-     *
-     * When adding recipes to an {@link AContainer} we will use this identifier to
-     * identify all instances of the same {@link AContainer}.
-     * This way we can add the recipes to all instances of the same machine.
-     *
-     * <strong>This method will be deprecated and replaced in the future</strong>
-     *
-     * @return The identifier of this machine
-     */
     @Nonnull
     public abstract String getMachineIdentifier();
 
-    /**
-     * This method registers all default recipes for this machine.
-     */
     protected void registerDefaultRecipes() {
         // Override this method to register your machine recipes
-    }
-
-    public List<MachineRecipe> getMachineRecipes() {
-        return recipes;
     }
 
     public List<ItemStack> getDisplayRecipes() {
@@ -291,7 +210,6 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
             if (recipe.getInput().length != 1) {
                 continue;
             }
-
             displayRecipes.add(recipe.getInput()[0]);
             displayRecipes.add(recipe.getOutput()[0]);
         }
@@ -299,15 +217,6 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
         return displayRecipes;
     }
 
-    @Override
-    public int[] getInputSlots() {
-        return new int[] { 19, 21 };
-    }
-
-    @Override
-    public int[] getOutputSlots() {
-        return new int[] { 25 };
-    }
 
     @Override
     public EnergyNetComponentType getEnergyComponentType() {
@@ -321,10 +230,6 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
 
     public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
         registerRecipe(new MachineRecipe(seconds, input, output));
-    }
-
-    public void registerRecipe(int seconds, ItemStack input, ItemStack output) {
-        registerRecipe(new MachineRecipe(seconds, new ItemStack[] { input }, new ItemStack[] { output }));
     }
 
     @Override
@@ -342,47 +247,50 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
             }
         });
     }
+    @Override
+    public int[] getInputSlots() {
+        return new int[] { 19, 21 };
+    }
+
+    @Override
+    public int[] getOutputSlots() {
+        return new int[] { 25 };
+    }
 
     protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
-        CraftingOperation currentOperation = processor.getOperation(b);
+        ItemStack item1 = inv.getItemInSlot(getInputSlots()[0]);
+        ItemStack item2 = inv.getItemInSlot(getInputSlots()[1]);
 
-        if (currentOperation != null) {
-            if (takeCharge(b.getLocation())) {
+        if (item1 == null || item2 == null || (item2.getType() != Material.ENCHANTED_BOOK && item1.getType() != item2.getType())) {
+            inv.replaceExistingItem(getOutputSlots()[0], new CustomItemStack(Material.BARRIER, "&cInvalid items!"));
+            return;
+        }
 
-                if (!currentOperation.isFinished()) {
-                    processor.updateProgressBar(inv, 22, currentOperation);
-                    currentOperation.addProgress(1);
-                } else {
-                    inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
+        ItemStack output = getOutput(item1, item2);
 
-                    for (ItemStack output : currentOperation.getResults()) {
-                        inv.pushItem(output.clone(), getOutputSlots());
-                    }
+        if (output == null) {
+            inv.replaceExistingItem(getOutputSlots()[0], new CustomItemStack(Material.BARRIER, "&cNo upgrades!"));
+            return;
+        }
 
-                    processor.endOperation(b);
-                }
-            }
-        } else {
-            MachineRecipe next = findNextRecipe(inv);
-
-            if (next != null) {
-                currentOperation = new CraftingOperation(next);
-                processor.startOperation(b, currentOperation);
-
-                // Fixes #3534 - Update indicator immediately
-                processor.updateProgressBar(inv, 22, currentOperation);
-            }
+        if (!item1.getType().isAir() && !item1.getType().isAir()){
+            inv.replaceExistingItem(getOutputSlots()[0], Util.getDisplayItem(output));
+            BlockStorage.getInventory(b).getItemInSlot(getInputSlots()[0]).setType(Material.AIR);
+            BlockStorage.getInventory(b).getItemInSlot(getInputSlots()[1]).setType(Material.AIR);
         }
     }
 
-    /**
-     * This method will remove charge from a location if it is chargeable.
-     *
-     * @param l
-     *            location to try to remove charge from
-     * @return Whether charge was taken if its chargeable
-     */
+    @Nullable
+    private static ItemStack getOutput(@Nonnull ItemStack item1, @Nonnull ItemStack item2) {
+        Map<Enchantment, Integer> enchants1 = getEnchants(item1.getItemMeta());
+        Map<Enchantment, Integer> enchants2 = getEnchants(item2.getItemMeta());
+        if (enchants1.size() == 0 && enchants2.size() == 0) {
+            return null;
+        }
+        return combineEnchants(Maps.difference(enchants1, enchants2), item1, item2);
+    }
+
     protected boolean takeCharge(@Nonnull Location l) {
         Validate.notNull(l, "Can't attempt to take charge from a null location!");
 
@@ -400,44 +308,81 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
         }
     }
 
-    protected MachineRecipe findNextRecipe(BlockMenu inv) {
-        Map<Integer, ItemStack> inventory = new HashMap<>();
+    private static void setEnchants(@Nonnull ItemStack item, @Nonnull ItemMeta meta, @Nonnull Map<Enchantment, Integer> enchants) {
+        if (meta instanceof EnchantmentStorageMeta) {
+            EnchantmentStorageMeta book = (EnchantmentStorageMeta) meta;
+            for (Map.Entry<Enchantment, Integer> entry : enchants.entrySet()) {
+                book.addStoredEnchant(entry.getKey(), entry.getValue(), true);
+            }
+            item.setItemMeta(book);
+        }
+        else {
+            for (Map.Entry<Enchantment, Integer> entry : enchants.entrySet()) {
+                item.addUnsafeEnchantment(entry.getKey(), entry.getValue());
+            }
+        }
+    }
 
-        for (int slot : getInputSlots()) {
-            ItemStack item = inv.getItemInSlot(slot);
+    @Nonnull
+    private static Map<Enchantment, Integer> getEnchants(@Nonnull ItemMeta meta) {
+        if (meta instanceof EnchantmentStorageMeta) {
+            EnchantmentStorageMeta book = (EnchantmentStorageMeta) meta;
+            if (book.hasStoredEnchants()) {
+                return book.getStoredEnchants();
+            }
+        }
+        else if (meta.hasEnchants()) {
+            return meta.getEnchants();
+        }
 
-            if (item != null) {
-                inventory.put(slot, ItemStackWrapper.wrap(item));
+        return new HashMap<>();
+    }
+
+    @Nullable
+    private static ItemStack combineEnchants(@Nonnull MapDifference<Enchantment, Integer> dif, @Nonnull ItemStack item1, @Nonnull ItemStack item2) {
+        ItemStack item = item1.clone();
+        item.setAmount(1);
+        ItemMeta meta = item.getItemMeta();
+
+        Map<Enchantment, Integer> enchants = new HashMap<>();
+
+        boolean changed = false;
+
+        //upgrades (same enchant and level)
+        for (Map.Entry<Enchantment, Integer> e : dif.entriesInCommon().entrySet()) {
+            if (MAX_LEVELS.containsKey(e.getKey()) && e.getValue() < MAX_LEVELS.get(e.getKey())) {
+                enchants.put(e.getKey(), e.getValue() + 1);
+                changed = true;
             }
         }
 
-        Map<Integer, Integer> found = new HashMap<>();
-
-        for (MachineRecipe recipe : recipes) {
-            for (ItemStack input : recipe.getInput()) {
-                for (int slot : getInputSlots()) {
-                    if (SlimefunUtils.isItemSimilar(inventory.get(slot), input, true)) {
-                        found.put(slot, input.getAmount());
-                        break;
-                    }
-                }
-            }
-
-            if (found.size() == recipe.getInput().length) {
-                if (!InvUtils.fitAll(inv.toInventory(), recipe.getOutput(), getOutputSlots())) {
-                    return null;
-                }
-
-                for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    inv.consumeItem(entry.getKey(), entry.getValue());
-                }
-
-                return recipe;
-            } else {
-                found.clear();
+        //override (same enchant different level)
+        for (Map.Entry<Enchantment, MapDifference.ValueDifference<Integer>> e : dif.entriesDiffering().entrySet()) {
+            if (e.getValue().rightValue() > e.getValue().leftValue()) {
+                enchants.put(e.getKey(), e.getValue().rightValue());
+                changed = true;
             }
         }
 
-        return null;
+        boolean bookOntoTool = item2.getType() == Material.ENCHANTED_BOOK && item1.getType() != Material.ENCHANTED_BOOK;
+
+        //unique (different enchants from 2nd item)
+        for (Map.Entry<Enchantment, Integer> e : dif.entriesOnlyOnRight().entrySet()) {
+            if (bookOntoTool) {
+                if (!e.getKey().canEnchantItem(item)) {
+                    continue;
+                }
+            }
+            enchants.put(e.getKey(), e.getValue());
+            changed = true;
+        }
+
+        if (changed) {
+            setEnchants(item, meta, enchants);
+            return item;
+        }
+        else {
+            return null;
+        }
     }
 }

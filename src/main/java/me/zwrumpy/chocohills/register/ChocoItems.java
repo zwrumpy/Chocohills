@@ -250,7 +250,7 @@ public class ChocoItems {
 
     public static final SlimefunItemStack CHOCO_ADVANCE_ANVIL = new SlimefunItemStack(
             "CHOCO_ADVANCE_ANVIL",
-            Material.ANVIL,
+            Material.BONE_BLOCK,
             "&eAdvance Anvil",
             "&7Usage",
             "&fCombines enchants",
@@ -322,7 +322,7 @@ public class ChocoItems {
             "&fnow can generate Amethyst Cluster",
             " ",
             "&7Usage:",
-            "&fCarbon Generator",
+            "&fAmethyst Cluster Generator",
             "&7Rate: &f16 &7Amethyst Cluster",
             "&7Time: &f2 &7minutes",
             " ",

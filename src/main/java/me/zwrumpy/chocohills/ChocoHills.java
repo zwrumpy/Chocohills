@@ -1,6 +1,7 @@
 package me.zwrumpy.chocohills;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import me.zwrumpy.chocohills.machine.listener.AnvilInventoryListener;
 import me.zwrumpy.chocohills.tools.commands.ToolCommand;
 import me.zwrumpy.chocohills.tools.listener.PickaxeListener;
 import me.zwrumpy.chocohills.tools.listener.TorchInteract;
@@ -35,6 +36,9 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
     void registerListeners(){
         getServer().getPluginManager().registerEvents(new PickaxeListener(this), this);
         getServer().getPluginManager().registerEvents(new TorchInteract(this), this);
+        getServer().getPluginManager().registerEvents(new AnvilInventoryListener(), this);
+
+
     }
 
     public static ChocoHills getInstance() {return instance;}
