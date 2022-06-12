@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class AnvilInventoryListener implements Listener {
+public class AdvanceAnvilInventory implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void onClickMenu(InventoryClickEvent e) {
         if (!isChocoAnvil(e)) return;

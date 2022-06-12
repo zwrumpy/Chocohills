@@ -1,29 +1,7 @@
 package me.zwrumpy.chocohills.machine.abstracts;
 
-import java.util.*;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
-
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.Maps;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
-import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.util.Util;
-import org.apache.commons.lang.Validate;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemState;
@@ -37,22 +15,36 @@ import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.implementation.handlers.SimpleBlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper;
-
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.zwrumpy.chocohills.ChocoHills;
+import me.zwrumpy.chocohills.util.Util;
+import org.apache.commons.lang.Validate;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.*;
+
+public abstract class AdvanceAnvilAbstract extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
     protected static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
     protected  static final int[] BORDER_IN = { 9, 10, 11, 12, 13, 18, 20, 22, 31, 27, 28, 29, 30 };
@@ -74,7 +66,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     ));
 
     @ParametersAreNonnullByDefault
-    protected AnvilAbstract(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    protected AdvanceAnvilAbstract(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         createPreset(this, getInventoryTitle(), this::constructMenu);
         addItemHandler(onBlockBreak());
@@ -149,7 +141,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     public int getSpeed() {
         return processingSpeed;
     }
-    public final AnvilAbstract setCapacity(int capacity) {
+    public final AdvanceAnvilAbstract setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
 
         if (getState() == ItemState.UNREGISTERED) {
@@ -159,12 +151,12 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
             throw new IllegalStateException("You cannot modify the capacity after the Item was registered.");
         }
     }
-    public final AnvilAbstract setProcessingSpeed(int speed) {
+    public final AdvanceAnvilAbstract setProcessingSpeed(int speed) {
         Validate.isTrue(speed > 0, "The speed must be greater than zero!");
         this.processingSpeed = speed;
         return this;
     }
-    public final AnvilAbstract setEnergyConsumption(int energyConsumption) {
+    public final AdvanceAnvilAbstract setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
         Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
         Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
@@ -241,7 +233,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
 
             @Override
             public void tick(Block b, SlimefunItem sf, Config data) {
-                AnvilAbstract.this.tick(b);
+                AdvanceAnvilAbstract.this.tick(b);
             }
 
             @Override

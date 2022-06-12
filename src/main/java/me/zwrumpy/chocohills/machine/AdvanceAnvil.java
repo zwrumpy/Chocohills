@@ -5,17 +5,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotHopperable;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.zwrumpy.chocohills.machine.abstracts.AnvilAbstract;
-import me.zwrumpy.chocohills.register.ChocoItems;
-import org.bukkit.Material;
+import me.zwrumpy.chocohills.machine.abstracts.AdvanceAnvilAbstract;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class AdvanceAnvil extends AnvilAbstract implements RecipeDisplayItem, NotHopperable {
+public class AdvanceAnvil extends AdvanceAnvilAbstract implements RecipeDisplayItem, NotHopperable {
 
 
     @ParametersAreNonnullByDefault
