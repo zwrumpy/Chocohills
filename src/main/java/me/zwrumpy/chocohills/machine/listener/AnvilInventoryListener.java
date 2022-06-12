@@ -1,5 +1,4 @@
 package me.zwrumpy.chocohills.machine.listener;
-
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -14,44 +13,41 @@ import javax.annotation.Nonnull;
 public class AnvilInventoryListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void onClickMenu(InventoryClickEvent e) {
-        if (!e.getView().getTitle().equalsIgnoreCase("CHOCO ADVANCE ANVIL")) return;
+        if (!isChocoAnvil(e)) return;
+
         Inventory invBottom = e.getView().getBottomInventory();
-        if (e.getInventory().equals(invBottom)) return;
-
         Inventory invTop = e.getView().getTopInventory();
+        ItemStack itemPreview = invTop.getItem(23);
 
-        ItemStack itemOutput = invTop.getItem(25);
-        ItemStack itemInput1 = invTop.getItem(19);
-        ItemStack itemInput2 = invTop.getItem(21);
+        if (e.getInventory().equals(invBottom)) return;
+        if (invTop.getItem(25) != null) return;
 
-        if (itemInput1 != null && itemInput2 != null && !isBarrierOutput(itemOutput)) {
-            if (e.getInventory().equals(invBottom)) return;
-            if (e.getRawSlot() != 25) return;
-            invTop.setItem(19, new ItemStack(Material.AIR));
-            invTop.setItem(21, new ItemStack(Material.AIR));
-            e.setCancelled(true);
-            return;
-        }
-
-        if (isBarrierOutput(itemOutput)) {
-            if (!e.getInventory().equals(invTop)) return;
-            checkBarrier(itemOutput, invTop);
-            e.setCancelled(true);
-            return;
+        if (!isEmpty(19, invTop) && !isEmpty(21, invTop) && !isBarrierOutput(itemPreview)){
+            if (e.getRawSlot() == 23){
+                invTop.setItem(25, itemPreview);
+                invTop.setItem(19, new ItemStack(Material.AIR));
+                invTop.setItem(21, new ItemStack(Material.AIR));
+                invTop.setItem(23, new ItemStack(Material.AIR));
+                return;
+            }
         }
     }
 
-    public void checkBarrier(ItemStack item, Inventory inv) {
-        if (item == null) return;
-        if (isBarrierOutput(item)) {
-            inv.setItem(25, new ItemStack(Material.AIR));
-        }
+    public boolean isChocoAnvil(InventoryClickEvent event){
+        return event.getView().getTitle().equalsIgnoreCase("CHOCO ADVANCE ANVIL");
     }
 
     @Nonnull
     public boolean isBarrierOutput(ItemStack item){
         if (item == null) return false;
         return item.getType() == Material.BARRIER;
+    }
+
+    public boolean isEmpty(int slot, Inventory inv){
+        ItemStack itemCheck = inv.getItem(slot);
+        if (itemCheck == null) return false;
+        if (itemCheck.getType().isAir()) return true;
+        return false;
     }
 }
 

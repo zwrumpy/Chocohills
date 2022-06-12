@@ -57,6 +57,9 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     protected static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
     protected  static final int[] BORDER_IN = { 9, 10, 11, 12, 13, 18, 20, 22, 31, 27, 28, 29, 30 };
     protected  static final int[] BORDER_OUT = {15, 16, 17, 24, 26, 33, 34, 35 };
+    protected  static final int[] INPUT = { 19, 21 };
+    protected  static final int[] OUTPUT = { 25 };
+    protected  static final int[] PREVIEW = { 23 };
 
     protected final List<MachineRecipe> recipes = new ArrayList<>();
     private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
@@ -249,12 +252,16 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     }
     @Override
     public int[] getInputSlots() {
-        return new int[] { 19, 21 };
+        return INPUT;
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] { 25 };
+        return OUTPUT;
+    }
+
+    public int[] getPreviewSlots() {
+        return PREVIEW;
     }
 
     protected void tick(Block b) {
@@ -263,19 +270,19 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
         ItemStack item2 = inv.getItemInSlot(getInputSlots()[1]);
 
         if (item1 == null || item2 == null || (item2.getType() != Material.ENCHANTED_BOOK && item1.getType() != item2.getType())) {
-            inv.replaceExistingItem(getOutputSlots()[0], new CustomItemStack(Material.BARRIER, "&cInvalid items!"));
+            inv.replaceExistingItem(getPreviewSlots()[0], new CustomItemStack(Material.BARRIER, "&cInvalid items!"));
             return;
         }
 
         ItemStack output = getOutput(item1, item2);
 
         if (output == null) {
-            inv.replaceExistingItem(getOutputSlots()[0], new CustomItemStack(Material.BARRIER, "&cNo upgrades!"));
+            inv.replaceExistingItem(getPreviewSlots()[0], new CustomItemStack(Material.BARRIER, "&cNo upgrades!"));
             return;
         }
 
         if (!item1.getType().isAir() && !item1.getType().isAir()){
-            inv.replaceExistingItem(getOutputSlots()[0], Util.getDisplayItem(output));
+            inv.replaceExistingItem(getPreviewSlots()[0], Util.getDisplayItem(output));
             BlockStorage.getInventory(b).getItemInSlot(getInputSlots()[0]).setType(Material.AIR);
             BlockStorage.getInventory(b).getItemInSlot(getInputSlots()[1]).setType(Material.AIR);
         }
@@ -285,9 +292,7 @@ public abstract class AnvilAbstract extends SlimefunItem implements InventoryBlo
     private static ItemStack getOutput(@Nonnull ItemStack item1, @Nonnull ItemStack item2) {
         Map<Enchantment, Integer> enchants1 = getEnchants(item1.getItemMeta());
         Map<Enchantment, Integer> enchants2 = getEnchants(item2.getItemMeta());
-        if (enchants1.size() == 0 && enchants2.size() == 0) {
-            return null;
-        }
+        if (enchants1.size() == 0 && enchants2.size() == 0) return null;
         return combineEnchants(Maps.difference(enchants1, enchants2), item1, item2);
     }
 
