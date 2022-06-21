@@ -374,12 +374,11 @@ public class ChocoItems {
 
     public static final SlimefunItemStack GREEN_THUMB = new SlimefunItemStack(
             "GREEN_THUMB",
-            Material.PODZOL,
+            Material.GREEN_CONCRETE,
             "&b&lDean Green Thumb",
             "&7Usage:",
-            "Dirt to Grass Block",
-            "&7Rate: &f1 grassblock",
-            "&7Time: &f2 seconds",
+            "Convert Dirt to Grass Block",
+            "&7Process Time: &f2 seconds",
             " ",
             "Input: &f1 Dirt block on input"
     );
