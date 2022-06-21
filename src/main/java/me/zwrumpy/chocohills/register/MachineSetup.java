@@ -6,6 +6,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.zwrumpy.chocohills.ChocoHills;
 import me.zwrumpy.chocohills.machine.AdvanceAnvil;
 import me.zwrumpy.chocohills.machine.EggCooker;
+import me.zwrumpy.chocohills.machine.GreenThumb;
 import me.zwrumpy.chocohills.machine.MenardzSmoker;
 import org.bukkit.inventory.ItemStack;
 
@@ -43,7 +44,7 @@ public class MachineSetup {
                 .setProcessingSpeed(1)
                 .register(addon);
 
-        new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.GREEN_THUMB, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new GreenThumb(ChocoItems.CH_MACHINES, ChocoItems.GREEN_THUMB, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null, SlimefunItems.ELECTRIC_MOTOR, null,
                         ChocoItems.CHOCO_CARBON, ChocoItems.AYANSHARD, ChocoItems.CHOCO_CARBON,
