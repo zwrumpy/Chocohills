@@ -371,4 +371,16 @@ public class ChocoItems {
             "&7Setup:",
             "&fPlace Chest on top of this block"
     );
+
+    public static final SlimefunItemStack GREEN_THUMB = new SlimefunItemStack(
+            "GREEN_THUMB",
+            Material.PODZOL,
+            "&b&lDean Green Thumb",
+            "&7Usage:",
+            "Dirt to Grass Block",
+            "&7Rate: &f1 grassblock",
+            "&7Time: &f2 seconds",
+            " ",
+            "Input: &f1 Dirt block on input"
+    );
 }

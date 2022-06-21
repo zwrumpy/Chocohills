@@ -42,5 +42,15 @@ public class MachineSetup {
                 .setEnergyConsumption(10)
                 .setProcessingSpeed(1)
                 .register(addon);
+
+        new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.GREEN_THUMB, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        null, SlimefunItems.ELECTRIC_MOTOR, null,
+                        ChocoItems.CHOCO_CARBON, ChocoItems.AYANSHARD, ChocoItems.CHOCO_CARBON,
+                        null, ChocoItems.EGGPENSIVE, null})
+                .setCapacity(256)
+                .setEnergyConsumption(10)
+                .setProcessingSpeed(1)
+                .register(addon);
     }
 }
