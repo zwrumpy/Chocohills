@@ -248,6 +248,17 @@ public class ChocoItems {
             LoreBuilder.powerPerSecond(20)
     );
 
+    public static final SlimefunItemStack CHOCO_ADVANCE_ANVIL = new SlimefunItemStack(
+            "CHOCO_ADVANCE_ANVIL",
+            Material.BONE_BLOCK,
+            "&eAdvance Anvil",
+            "&7Usage",
+            "&fCombines enchants",
+            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
+            LoreBuilder.speed(1),
+            LoreBuilder.powerPerSecond(20)
+    );
+
     public static final SlimefunItemStack MENARDZ_SMOKER = new SlimefunItemStack(
             "MENARDZ_SMOKER",
             Material.CAMPFIRE,
