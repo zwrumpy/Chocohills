@@ -75,7 +75,7 @@ public class MaterialGeneratorSetup {
                         ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
                 })
                 .setItem(Material.DIRT, 64)
-                .setRate(8, 300)
+                .setRate(8, 180)
                 .register(addon);
     }
 }

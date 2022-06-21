@@ -366,7 +366,7 @@ public class ChocoItems {
             "&7Usage:",
             "&fDirt Generator",
             "&7Rate: &f64 &7Dirt",
-            "&7Time: &f5 &7minutes",
+            "&7Time: &f3 &7minutes",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"
@@ -379,7 +379,7 @@ public class ChocoItems {
             "&7Usage:",
             "&7Convert Dirt to Grass Block",
             " ",
-            "Rate: 32 Grass block per 5 seconds",
+            "&7Rate: 32 Grass block per 5 seconds",
             " ",
             "&7Input: &f32 Dirt block"
     );
