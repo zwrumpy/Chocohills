@@ -23,7 +23,7 @@ public class GreenThumb extends AContainer implements RecipeDisplayItem, NotHopp
 
     @Override
     protected void registerDefaultRecipes() {
-        registerRecipe(1, new ItemStack[]{new ItemStack(Material.DIRT)}, new ItemStack[]{new ItemStack(Material.GRASS_BLOCK)});
+        registerRecipe(5, new ItemStack[]{new ItemStack(Material.DIRT, 32)}, new ItemStack[]{new ItemStack(Material.GRASS_BLOCK, 32)});
     }
 
     @Nonnull
