@@ -23,15 +23,15 @@ public class MachineSetup {
         new MenardzSmoker(ChocoItems.CH_MACHINES, ChocoItems.MENARDZ_SMOKER)
                 .register(addon);
 
-        new AdvanceAnvil(ChocoItems.CH_MACHINES, ChocoItems.CHOCO_ADVANCE_ANVIL, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{
-                        ChocoItems.EGGPENSIVE, ChocoItems.CHOCO_CRYSTAL_X2, ChocoItems.TINAPANG_ITLOG,
-                        ChocoItems.CHOCO_CRYSTAL_X2, ChocoItems.AYANSHARD, ChocoItems.CHOCO_CRYSTAL_X2,
-                        null, ChocoItems.CHOCO_CRYSTAL_X2, null})
-                .setCapacity(256)
-                .setEnergyConsumption(10)
-                .setProcessingSpeed(1)
-                .register(addon);
+//        new AdvanceAnvil(ChocoItems.CH_MACHINES, ChocoItems.CHOCO_ADVANCE_ANVIL, RecipeType.ENHANCED_CRAFTING_TABLE,
+//                new ItemStack[]{
+//                        ChocoItems.EGGPENSIVE, ChocoItems.CHOCO_CRYSTAL_X2, ChocoItems.TINAPANG_ITLOG,
+//                        ChocoItems.CHOCO_CRYSTAL_X2, ChocoItems.AYANSHARD, ChocoItems.CHOCO_CRYSTAL_X2,
+//                        null, ChocoItems.CHOCO_CRYSTAL_X2, null})
+//                .setCapacity(256)
+//                .setEnergyConsumption(10)
+//                .setProcessingSpeed(1)
+//                .register(addon);
 
 
         new EggCooker(ChocoItems.CH_MACHINES, ChocoItems.EGG_COOKER, RecipeType.ENHANCED_CRAFTING_TABLE,
