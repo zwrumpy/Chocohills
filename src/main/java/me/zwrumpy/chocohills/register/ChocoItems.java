@@ -361,7 +361,7 @@ public class ChocoItems {
 
     public static final SlimefunItemStack DEAN_TAMBAK = new SlimefunItemStack(
             "DEAN_TAMBAK",
-            Material.DIRT,
+            Material.PODZOL,
             "&b&lDean Tambak",
             "&7Usage:",
             "&fDirt Generator",
