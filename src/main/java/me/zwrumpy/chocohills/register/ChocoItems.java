@@ -311,7 +311,7 @@ public class ChocoItems {
             "&fnow can generate Amethyst Cluster",
             " ",
             "&7Usage:",
-            "&fCarbon Generator",
+            "&fAmethyst Cluster Generator",
             "&7Rate: &f16 &7Amethyst Cluster",
             "&7Time: &f2 &7minutes",
             " ",
@@ -343,6 +343,19 @@ public class ChocoItems {
             "&fDiamond Generator",
             "&7Rate: &f2 &7Diamond",
             "&7Time: &f10 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
+
+    public static final SlimefunItemStack DEAN_TAMBAK = new SlimefunItemStack(
+            "DEAN_TAMBAK",
+            Material.DIRT,
+            "&b&lDean Tambak",
+            "&7Usage:",
+            "&fDirt Generator",
+            "&7Rate: &f64 &7Dirt",
+            "&7Time: &f5 &7minutes",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"

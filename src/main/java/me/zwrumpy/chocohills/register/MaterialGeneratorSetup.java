@@ -67,5 +67,15 @@ public class MaterialGeneratorSetup {
                 .setItem(Material.DIAMOND,2)
                 .setRate(6, 600)
                 .register(addon);
+
+        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DEAN_TAMBAK, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        ChocoItems.CHOCO_CARBON, new ItemStack(Material.DIRT),ChocoItems.CHOCO_CARBON,
+                        new ItemStack(Material.DIRT), ChocoItems.ARFWOOFERITE, new ItemStack(Material.DIRT),
+                        ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
+                })
+                .setItem(Material.DIRT, 64)
+                .setRate(8, 300)
+                .register(addon);
     }
 }
