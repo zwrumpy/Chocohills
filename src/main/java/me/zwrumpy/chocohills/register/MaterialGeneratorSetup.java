@@ -25,7 +25,7 @@ public class MaterialGeneratorSetup {
                         null, ChocoItems.TORCHTILLAS, null
                 })
                 .setItem(Material.NETHERITE_INGOT)
-                .setRate(3, 300)
+                .setRate(4, 300)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -45,7 +45,7 @@ public class MaterialGeneratorSetup {
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
                 .setItem(Material.AMETHYST_CLUSTER,16)
-                .setRate(4, 120)
+                .setRate(10, 120)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DRTGOO, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -55,7 +55,7 @@ public class MaterialGeneratorSetup {
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
                 .setItem(SlimefunItems.STRANGE_NETHER_GOO,8)
-                .setRate(6, 180)
+                .setRate(12,180)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.REMI_DIAS, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -65,7 +65,7 @@ public class MaterialGeneratorSetup {
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
                 .setItem(Material.DIAMOND,2)
-                .setRate(7, 600)
+                .setRate(14,00)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DEAN_TAMBAK, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -75,7 +75,7 @@ public class MaterialGeneratorSetup {
                         ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
                 })
                 .setItem(Material.DIRT, 64)
-                .setRate(8, 180)
+                .setRate(16,180)
                 .register(addon);
     }
 }

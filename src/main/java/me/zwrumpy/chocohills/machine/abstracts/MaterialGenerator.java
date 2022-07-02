@@ -66,14 +66,22 @@ public class MaterialGenerator extends SlimefunItem {
             final BlockPosition pos = new BlockPosition(b);
             int progress = generatorProgress.getOrDefault(pos, 0);
 
+            progress++;
+
             if (progress >= this.rate) {
                 progress = 0;
                 inv.addItem(this.item);
-            } else {
-                progress++;
             }
             generatorProgress.put(pos, progress);
         }
+    }
+
+    @ParametersAreNonnullByDefault
+    public final MaterialGenerator setItem(SlimefunItemStack material, int amount) {
+        ItemStack item = material.clone();
+        item.setAmount(amount);
+        this.item = item;
+        return this;
     }
 
     @ParametersAreNonnullByDefault
@@ -92,13 +100,7 @@ public class MaterialGenerator extends SlimefunItem {
         return this;
     }
 
-    @ParametersAreNonnullByDefault
-    public final MaterialGenerator setItem(SlimefunItemStack material, int amount) {
-        ItemStack item = material.clone();
-        item.setAmount(amount);
-        this.item = item;
-        return this;
-    }
+
 
     @ParametersAreNonnullByDefault
     public final MaterialGenerator setRate(int rateTicks, int seconds) {
