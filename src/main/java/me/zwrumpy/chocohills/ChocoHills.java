@@ -35,9 +35,6 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
     void registerListeners(){
         getServer().getPluginManager().registerEvents(new PickaxeListener(this), this);
         getServer().getPluginManager().registerEvents(new TorchInteract(this), this);
-        getServer().getPluginManager().registerEvents(new AdvanceAnvilInventory(), this);
-
-
     }
 
     public static ChocoHills getInstance() {return instance;}
