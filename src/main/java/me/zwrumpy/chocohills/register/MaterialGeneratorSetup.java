@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.zwrumpy.chocohills.ChocoHills;
+import me.zwrumpy.chocohills.machine.abstracts.ArfBon;
 import me.zwrumpy.chocohills.machine.abstracts.MaterialGenerator;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -28,7 +29,7 @@ public class MaterialGeneratorSetup {
                 .setRate(4, 300)
                 .register(addon);
 
-        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ArfBon(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null,SlimefunItems.ENERGIZED_CAPACITOR, null,
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,

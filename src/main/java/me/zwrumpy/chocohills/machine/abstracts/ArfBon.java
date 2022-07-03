@@ -21,14 +21,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MaterialGenerator extends SlimefunItem {
+public class ArfBon extends SlimefunItem {
 
-    private static final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
+    private final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
     private int rate = 20;
-    private static ItemStack item;
+    private ItemStack item;
 
     @ParametersAreNonnullByDefault
-    public MaterialGenerator(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public ArfBon(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -38,7 +38,7 @@ public class MaterialGenerator extends SlimefunItem {
             @Override
             @ParametersAreNonnullByDefault
             public void tick(Block b, SlimefunItem sf, Config data) {
-                MaterialGenerator.this.tick(b);
+                ArfBon.this.tick(b);
             }
 
             @Override
@@ -76,27 +76,15 @@ public class MaterialGenerator extends SlimefunItem {
         }
     }
 
-    public final MaterialGenerator setItem(Material material) {
-        this.item = new ItemStack(material);
-        return this;
-    }
-
     @ParametersAreNonnullByDefault
-    public final MaterialGenerator setItem(SlimefunItemStack material, int amount) {
+    public final ArfBon setItem(SlimefunItemStack material, int amount) {
         ItemStack item = material.clone();
         item.setAmount(amount);
         this.item = item;
         return this;
     }
-
     @ParametersAreNonnullByDefault
-    public final MaterialGenerator setItem(Material material, int amount) {
-        this.item = new ItemStack(material, amount);
-        return this;
-    }
-
-    @ParametersAreNonnullByDefault
-    public final MaterialGenerator setRate(int rateTicks, int seconds) {
+    public final ArfBon setRate(int rateTicks, int seconds) {
         this.rate = Math.max(rateTicks, seconds * 2);
         return this;
     }
