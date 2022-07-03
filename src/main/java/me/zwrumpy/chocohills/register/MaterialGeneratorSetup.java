@@ -18,6 +18,17 @@ public class MaterialGeneratorSetup {
     }
 
     void setup() {
+        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        null,SlimefunItems.ENERGIZED_CAPACITOR, null,
+                        SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
+                        ChocoItems.CHOCO_CARBON, ChocoItems.TORCHTILLAS, ChocoItems.CHOCO_CARBON
+                })
+                .setItem(SlimefunItems.CARBON)
+                .setItemAmount(64)
+                .setRate(20, 30)
+                .register(addon);
+
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFWOOFERITE, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null, ChocoItems.ENERGIZED_CRYSTAL, null,
@@ -28,23 +39,14 @@ public class MaterialGeneratorSetup {
                 .setRate(2, 300)
                 .register(addon);
 
-        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{
-                        null,SlimefunItems.ENERGIZED_CAPACITOR, null,
-                        SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
-                        ChocoItems.CHOCO_CARBON, ChocoItems.TORCHTILLAS, ChocoItems.CHOCO_CARBON
-                })
-                .setItem(SlimefunItems.CARBON,64)
-                .setRate(2, 30)
-                .register(addon);
-
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.AYANCLUSTER, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         ChocoItems.AYANSHARD,SlimefunItems.ENERGIZED_CAPACITOR, ChocoItems.AYANSHARD,
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
-                .setItem(Material.AMETHYST_CLUSTER,16)
+                .setItem(Material.AMETHYST_CLUSTER)
+                .setItemAmount(16)
                 .setRate(4, 120)
                 .register(addon);
 
@@ -54,7 +56,8 @@ public class MaterialGeneratorSetup {
                         SlimefunItems.CARBON, ChocoItems.ARFWOOFERITE,  SlimefunItems.CARBON,
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
-                .setItem(SlimefunItems.STRANGE_NETHER_GOO,8)
+                .setItem(SlimefunItems.STRANGE_NETHER_GOO)
+                .setItemAmount(8)
                 .setRate(6, 180)
                 .register(addon);
 
@@ -64,7 +67,8 @@ public class MaterialGeneratorSetup {
                         ChocoItems.CHOCO_CARBON, ChocoItems.HYPER_CRYSTAL,  ChocoItems.CHOCO_CARBON,
                         ChocoItems.AYANSHARD, ChocoItems.TORCHTILLAS, ChocoItems.AYANSHARD
                 })
-                .setItem(Material.DIAMOND,2)
+                .setItem(Material.DIAMOND)
+                .setItemAmount(2)
                 .setRate(6, 600)
                 .register(addon);
 
@@ -74,7 +78,8 @@ public class MaterialGeneratorSetup {
                         new ItemStack(Material.DIRT), ChocoItems.ARFWOOFERITE, new ItemStack(Material.DIRT),
                         ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
                 })
-                .setItem(Material.DIRT, 64)
+                .setItem(Material.DIRT)
+                .setItemAmount(64)
                 .setRate(8, 180)
                 .register(addon);
     }

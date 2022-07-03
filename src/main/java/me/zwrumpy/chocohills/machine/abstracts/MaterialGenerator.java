@@ -26,7 +26,7 @@ public class MaterialGenerator extends SlimefunItem {
     private static final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
     private int rate = 20;
     private ItemStack item;
-
+    private int itemAmount = 1;
     @ParametersAreNonnullByDefault
     public MaterialGenerator(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
@@ -68,6 +68,7 @@ public class MaterialGenerator extends SlimefunItem {
 
             if (progress >= this.rate) {
                 progress = 0;
+                this.item.setAmount(itemAmount);
                 inv.addItem(this.item);
             } else {
                 progress++;
@@ -77,26 +78,20 @@ public class MaterialGenerator extends SlimefunItem {
     }
 
     @ParametersAreNonnullByDefault
-    public final MaterialGenerator setItem(Material material, int amount) {
-        this.item = new ItemStack(material, amount);
-        return this;
-    }
-
-    public final MaterialGenerator setItem(@Nonnull Material material) {
+    public final MaterialGenerator setItem(Material material) {
         this.item = new ItemStack(material);
         return this;
     }
 
-    public final MaterialGenerator setItem(@Nonnull SlimefunItemStack material) {
-        this.item = material;
+    @ParametersAreNonnullByDefault
+    public final MaterialGenerator setItem(SlimefunItemStack material) {
+        ItemStack item = material.clone();
+        this.item = item;
         return this;
     }
 
-    @ParametersAreNonnullByDefault
-    public final MaterialGenerator setItem(SlimefunItemStack material, int amount) {
-        ItemStack item = material.clone();
-        item.setAmount(amount);
-        this.item = item;
+    public final MaterialGenerator setItemAmount(int itemAmount){
+        this.itemAmount = itemAmount;
         return this;
     }
 
