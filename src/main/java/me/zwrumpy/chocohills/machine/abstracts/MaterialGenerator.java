@@ -89,7 +89,7 @@ public class MaterialGenerator extends SlimefunItem {
         this.item = item;
         return this;
     }
-
+    @ParametersAreNonnullByDefault
     public final MaterialGenerator setItemAmount(int itemAmount){
         this.itemAmount = itemAmount;
         return this;

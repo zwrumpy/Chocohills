@@ -383,4 +383,17 @@ public class ChocoItems {
             " ",
             "&7Input: &f32 Dirt block"
     );
+
+    public static final SlimefunItemStack BAAM_YELO = new SlimefunItemStack(
+            "BAM_YELO",
+            Material.SNOW,
+            "&b&lBam Yelo",
+            "&7Usage:",
+            "&fDirt Generator",
+            "&7Rate: &f64 &7Snow",
+            "&7Time: &f5 &7minutes",
+            " ",
+            "&7Setup:",
+            "&fPlace Chest on top of this block"
+    );
 }

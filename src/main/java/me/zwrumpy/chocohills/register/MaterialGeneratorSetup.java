@@ -36,7 +36,7 @@ public class MaterialGeneratorSetup {
                         null, ChocoItems.TORCHTILLAS, null
                 })
                 .setItem(Material.NETHERITE_INGOT)
-                .setRate(2, 300)
+                .setRate(2, 900)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.AYANCLUSTER, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -81,6 +81,18 @@ public class MaterialGeneratorSetup {
                 .setItem(Material.DIRT)
                 .setItemAmount(64)
                 .setRate(8, 180)
+                .register(addon);
+
+
+        new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.BAAM_YELO, RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        ChocoItems.CHOCO_CARBON, new ItemStack(Material.DIRT),ChocoItems.CHOCO_CARBON,
+                        SlimefunItems.REACTOR_COOLANT_CELL, ChocoItems.ARFWOOFERITE, SlimefunItems.REACTOR_COOLANT_CELL,
+                        ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
+                })
+                .setItem(Material.SNOW)
+                .setItemAmount(64)
+                .setRate(8, 300)
                 .register(addon);
     }
 }
