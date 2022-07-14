@@ -290,7 +290,7 @@ public class ChocoItems {
             "&7Usage:",
             "&fNetherite Generator",
             "&7Rate: &f1 &7netherite ingot",
-            "&7Time: &f5 &7minutes",
+            "&7Time: &f15 &7minutes",
             " ",
             "&7Setup:",
             "&fPlace Chest on top of this block"
