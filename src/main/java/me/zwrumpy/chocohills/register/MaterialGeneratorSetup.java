@@ -92,7 +92,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(Material.SNOW_BLOCK)
                 .setItemAmount(16)
-                .setRate(8, 600)
+                .setRate(8, 300)
                 .register(addon);
     }
 }
