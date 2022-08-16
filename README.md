@@ -10,7 +10,7 @@
   * Choco Carbon
   * Ayan Crystal
   * Ghosting Goo
-
+  
 **Machines**
   * Menardz Smoker - makes chicken egg into tinapang itlog
   * EggCooker - makes tinapang itlog into eggpensive
@@ -29,3 +29,5 @@
   * Arfbon - carbon generator
   * AyanCluster - amethyst cluster generator
   * Drt Goo - strange nether goo generator
+  * Dean Tambak - dirt generator
+  * Baam Yelo - snow block generator
