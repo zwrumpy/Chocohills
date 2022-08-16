@@ -386,12 +386,12 @@ public class ChocoItems {
 
     public static final SlimefunItemStack BAAM_YELO = new SlimefunItemStack(
             "BAAM_YELO",
-            Material.SNOW,
+            Material.SNOW_BLOCK,
             "&b&lBaam Yelo",
             "&7Usage:",
             "&fSnow Block Generator",
             " ",
-            "&7Rate: &f32 &7Snow",
+            "&7Rate: &f32 &7Snow Block",
             "&7Time: &f5 &7minutes",
             " ",
             "&7Setup:",
