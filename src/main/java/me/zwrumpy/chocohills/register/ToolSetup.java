@@ -3,7 +3,9 @@ package me.zwrumpy.chocohills.register;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.zwrumpy.chocohills.ChocoHills;
+import me.zwrumpy.chocohills.tools.BaamBuilder;
 import me.zwrumpy.chocohills.tools.Tools;
+import me.zwrumpy.chocohills.tools.Wrench;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -17,6 +19,9 @@ public class ToolSetup {
     }
 
     void setup() {
+        new Wrench();
+        new BaamBuilder();
+
         registerTools(ChocoItems.BLASTXEL, new ItemStack[]{
                 ChocoItems.CHOCO_CRYSTAL, new ItemStack(Material.NETHERITE_INGOT), ChocoItems.CHOCO_CRYSTAL,
                 new ItemStack(Material.NETHERITE_SHOVEL), new ItemStack(Material.NETHERITE_AXE), new ItemStack(Material.NETHERITE_PICKAXE),
