@@ -34,15 +34,23 @@ public class WrenchInteract implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onWrenchClick(PlayerInteractEvent e) {
-        if (!(e.getAction() == Action.LEFT_CLICK_BLOCK)) return;
+        if (!(e.getAction() == Action.LEFT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         Player p = e.getPlayer();
+        ItemStack item = p.getInventory().getItemInMainHand();
+
+        if (!(isWrench(item))) return;
+        if ((isWrench(item))) {
+            if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                e.setCancelled(true);
+                return;
+            }
+        }
 
         Block b = e.getClickedBlock();
         if (!isSfBlock(b)) return;
         if (!canBreak(p, b)) return;
 
-        ItemStack item = p.getInventory().getItemInMainHand();
-        if (!(isWrench(item))) return;
+
 
         BlockBreakEvent event = new BlockBreakEvent(b, p);
         Bukkit.getPluginManager().callEvent(event);

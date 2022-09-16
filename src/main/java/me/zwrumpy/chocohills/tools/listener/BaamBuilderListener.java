@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 public class BaamBuilderListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void onClick(PlayerInteractEvent e) {
-        if (!(e.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
+        if (!(e.getAction() == Action.LEFT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         Player p = e.getPlayer();
         ItemStack item = p.getInventory().getItemInMainHand();
         if (!(isTool("BAAM_BUILDER", item))) return;
@@ -31,7 +31,7 @@ public class BaamBuilderListener implements Listener {
 
     void placeItem(ItemStack hotbarItem, Player player){
         if (hotbarItem != null && hotbarItem.getAmount() >= 1){
-            Location loc = player.getTargetBlockExact(5).getLocation();
+            Location loc = player.getTargetBlockExact(8).getLocation();
             if (!canBreak(player, loc.getBlock())) return;
             for (int i = 1; i <= 5; i++){
                 loc.add(0, 1,0);

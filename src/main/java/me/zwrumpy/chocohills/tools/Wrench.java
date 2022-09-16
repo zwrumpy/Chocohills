@@ -28,7 +28,7 @@ public class Wrench {
             "&fInstant Break ",
             "&fSlimefun Blocks",
             " ",
-            "&7Left click blocks"
+            "&7tap/click slimefun blocks"
     );
 
     ItemStack[] recipe = new ItemStack[]{

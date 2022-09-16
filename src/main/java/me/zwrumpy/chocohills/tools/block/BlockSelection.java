@@ -76,6 +76,7 @@ public class BlockSelection {
         }
         return selectionCuboid(loc, loc2);
     }
+
     @ParametersAreNonnullByDefault
     public List<Block> line(Location loc, BlockFace blockFace, Integer depth) {
         Location loc2 = loc.clone();
@@ -102,6 +103,7 @@ public class BlockSelection {
         }
         return selectionCuboid(loc, loc2);
     }
+
     @ParametersAreNonnullByDefault
     private List<Block> selectionCuboid(Location pos1, Location pos2) {
         List<Block> blockList = new ArrayList<>();

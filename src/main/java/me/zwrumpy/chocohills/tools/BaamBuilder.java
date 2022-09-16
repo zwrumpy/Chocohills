@@ -9,16 +9,9 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class BaamBuilder {
-
     public BaamBuilder(){
         register(BAAM_BUILDER, recipe);
         registerListener();
-    }
-
-    void registerListener(){
-        ChocoHills.getInstance().getServer().getPluginManager().registerEvents(
-                new BaamBuilderListener(), ChocoHills.getInstance()
-        );
     }
 
     SlimefunItemStack BAAM_BUILDER = new SlimefunItemStack(
@@ -29,7 +22,7 @@ public class BaamBuilder {
             "&fInstant Place 5 Blocks ",
             "&fin your hotbar inventory",
             " ",
-            "&7Right click blocks"
+            "&7tap/click blocks"
     );
 
     ItemStack[] recipe = new ItemStack[]{
@@ -37,6 +30,12 @@ public class BaamBuilder {
             null, ChocoItems.TORCHTILLAS, null,
             null, ChocoItems.CHOCO_CRYSTAL, null
     };
+
+    void registerListener(){
+        ChocoHills.getInstance().getServer().getPluginManager().registerEvents(
+                new BaamBuilderListener(), ChocoHills.getInstance()
+        );
+    }
 
     void register(SlimefunItemStack stack, ItemStack[] recipe) {
         new Tools(ChocoItems.CH_TOOLS, stack, RecipeType.ENHANCED_CRAFTING_TABLE, recipe).register(ChocoHills.getInstance());
