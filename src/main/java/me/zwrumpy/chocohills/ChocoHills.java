@@ -24,6 +24,7 @@ public class ChocoHills extends JavaPlugin implements SlimefunAddon {
         new ToolSetup(this);
         new TransporterSetup(this);
         new MaterialGeneratorSetup(this);
+        new EnergyGeneratorSetup(this);
         new MachineSetup(this);
         new ResourceSetup(this);
     }

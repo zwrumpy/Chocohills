@@ -43,7 +43,7 @@ public class BlockEdit {
                     filteredBlocks.add(block);
                 }
             }
-        }).runTask((Plugin)this.plugin);
+        }).runTask(this.plugin);
         return filteredBlocks;
     }
 

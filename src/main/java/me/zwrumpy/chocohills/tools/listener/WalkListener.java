@@ -1,5 +1,6 @@
 package me.zwrumpy.chocohills.tools.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -26,8 +27,12 @@ public class WalkListener implements Listener {
             int Z = e.getFrom().getBlockZ();
             int z = e.getTo().getBlockZ();
             if (x != X || z != Z) {
-
+                log(x+" "+ z);
             }
         }
+    }
+
+    void log(String message){
+        Bukkit.getLogger().info(message);
     }
 }

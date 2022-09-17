@@ -24,6 +24,13 @@ public class BaamBuilderListener implements Listener {
         if (!(e.getAction() == Action.LEFT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         Player p = e.getPlayer();
         ItemStack item = p.getInventory().getItemInMainHand();
+
+        if (!(isTool("BAAM_BUILDER", item))) return;
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            e.setCancelled(true);
+            return;
+        }
+
         if (!(isTool("BAAM_BUILDER", item))) return;
         e.setCancelled(true);
         placeItem(getHotBarItem(p), p);
