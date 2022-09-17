@@ -30,8 +30,6 @@ public class BaamBuilderListener implements Listener {
             e.setCancelled(true);
             return;
         }
-
-        if (!(isTool("BAAM_BUILDER", item))) return;
         e.setCancelled(true);
         placeItem(getHotBarItem(p), p);
     }
@@ -42,12 +40,13 @@ public class BaamBuilderListener implements Listener {
             if (!canBreak(player, loc.getBlock())) return;
             for (int i = 1; i <= 5; i++){
                 loc.add(0, 1,0);
-                if (!(hotbarItem.getAmount() >= 1 && loc.getBlock().getType() == Material.AIR)) continue;
-                //log(""+i+" "+loc.getBlockY());
+                if (!(hotbarItem.getAmount() >= 1
+                        && (loc.getBlock().getType() == Material.AIR ||
+                        loc.getBlock().getType() == Material.WATER)
+                )) continue;
                 int amount = hotbarItem.getAmount() - 1;
                 loc.getBlock().setType(hotbarItem.getType());
                 hotbarItem.setAmount(amount);
-                //log(loc.getBlock().getType()+"");
             }
         }
     }
