@@ -1,6 +1,5 @@
-package me.zwrumpy.chocohills.tools.commands;
+package me.zwrumpy.chocohills.commands;
 
-import me.zwrumpy.chocohills.util.PlayerHotbar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,7 +12,6 @@ public class ToolCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             player.sendMessage("toolblock");
-            player.sendMessage(PlayerHotbar.getHotbarItems(player).toString());
         }
         return false;
     }

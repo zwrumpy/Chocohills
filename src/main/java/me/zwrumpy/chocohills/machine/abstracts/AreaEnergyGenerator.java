@@ -9,10 +9,15 @@ import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponen
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
+import me.zwrumpy.chocohills.util.entities.EntityScan;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -20,14 +25,18 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Machine extends SlimefunItem {
+public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvider {
 
     private static final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
     private int rate = 20;
-
+    private int capacity = 500;
+    int energy = 50;
+    int radius = 0;
+    int energyProduced = 0;
+    EntityType energySource;
 
     @ParametersAreNonnullByDefault
-    public Machine(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public AreaEnergyGenerator(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -37,7 +46,7 @@ public class Machine extends SlimefunItem {
             @Override
             @ParametersAreNonnullByDefault
             public void tick(Block b, SlimefunItem sf, Config data) {
-                Machine.this.tick(b);
+                AreaEnergyGenerator.this.tick(b);
             }
 
             @Override
@@ -58,8 +67,16 @@ public class Machine extends SlimefunItem {
 
         if (progress >= this.rate) {
             progress = 0;
-            update();
+            Bukkit.getLogger().info("afk nator");
+            int i = 0;
+            for (Entity e: EntityScan.getEntitiesAroundPoint(b.getLocation(), radius)){
+                if (e.getType() == energySource){
+                    i++;
+                }
+            }
+            energyProduced = energy * i;
         } else {
+            energyProduced = 0;
             progress++;
         }
         generatorProgress.put(pos, progress);
@@ -67,13 +84,50 @@ public class Machine extends SlimefunItem {
 
 
     @ParametersAreNonnullByDefault
-    public final Machine setTime(int rateTicks, int seconds) {
+    public final AreaEnergyGenerator setTime(int rateTicks, int seconds) {
         this.rate = Math.max(rateTicks, seconds * 2);
         return this;
     }
 
-    void update(){
+    @Nonnull
+    @Override
+    public EnergyNetComponentType getEnergyComponentType() {
+        return EnergyNetProvider.super.getEnergyComponentType();
+    }
 
+
+    @Override
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public AreaEnergyGenerator setEnergySource(EntityType entitySource) {
+        this.energySource = entitySource;
+        return this;
+    }
+
+    public AreaEnergyGenerator setEnergyCapacity(int capacity) {
+        this.capacity = capacity;
+        return this;
+    }
+
+    public AreaEnergyGenerator setEnergyOutput(int energy){
+        this.energy = energy;
+        return this;
+    }
+
+    public AreaEnergyGenerator setRadius(int radius){
+        this.radius = radius;
+        return this;
+    }
+    @Override
+    public int getGeneratedOutput(@Nonnull Location l, @Nonnull Config data) {
+        return energyProduced;
+    }
+
+    @Override
+    public boolean willExplode(@Nonnull Location l, @Nonnull Config data) {
+        return false;
     }
 }
 
