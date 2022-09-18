@@ -30,7 +30,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(SlimefunItems.CARBON)
                 .setItemAmount(64)
-                .setRate(20, 30)
+                .setTime(30)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFWOOFERITE, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -40,7 +40,7 @@ public class MaterialGeneratorSetup {
                         null, ChocoItems.TORCHTILLAS, null
                 })
                 .setItem(Material.NETHERITE_INGOT)
-                .setRate(2, 900)
+                .setTime(900)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.AYANCLUSTER, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -51,7 +51,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(Material.AMETHYST_CLUSTER)
                 .setItemAmount(16)
-                .setRate(4, 120)
+                .setTime(120)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DRTGOO, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -62,7 +62,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(SlimefunItems.STRANGE_NETHER_GOO)
                 .setItemAmount(8)
-                .setRate(6, 180)
+                .setTime(180)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.REMI_DIAS, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -73,7 +73,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(Material.DIAMOND)
                 .setItemAmount(2)
-                .setRate(6, 600)
+                .setTime(600)
                 .register(addon);
 
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DEAN_TAMBAK, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -84,7 +84,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(Material.DIRT)
                 .setItemAmount(64)
-                .setRate(8, 180)
+                .setTime(180)
                 .register(addon);
 
 
@@ -96,7 +96,7 @@ public class MaterialGeneratorSetup {
                 })
                 .setItem(Material.SNOW_BLOCK)
                 .setItemAmount(16)
-                .setRate(8, 300)
+                .setTime(300)
                 .register(addon);
     }
 }

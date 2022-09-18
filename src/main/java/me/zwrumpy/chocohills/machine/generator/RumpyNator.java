@@ -20,7 +20,7 @@ public class RumpyNator {
                         SlimefunItems.CARBON, SlimefunItems.COAL_GENERATOR,  SlimefunItems.CARBON,
                         null, SlimefunItems.SMALL_CAPACITOR, null
                 })
-                 .setTime(1, 2)
+                 .setTime(2)
                  .setEnergyOutput(75)
                  .setEnergySource(Material.LAVA)
                  .setEnergyCapacity(1000)
@@ -41,5 +41,4 @@ public class RumpyNator {
             "&7Setup",
             "&fPut Lava below this block"
     );
-
 }

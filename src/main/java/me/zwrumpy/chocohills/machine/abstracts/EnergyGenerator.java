@@ -24,7 +24,7 @@ import java.util.Map;
 public class EnergyGenerator extends SlimefunItem implements EnergyNetProvider {
 
     private static final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
-    private int rate = 20;
+    private int time = 20;
     private int capacity = 500;
     private Material energySource = Material.AIR;
     int energy = 50;
@@ -64,7 +64,7 @@ public class EnergyGenerator extends SlimefunItem implements EnergyNetProvider {
         final BlockPosition pos = new BlockPosition(b);
         int progress = generatorProgress.getOrDefault(pos, 0);
 
-        if (progress >= this.rate) {
+        if (progress >= this.time) {
             progress = 0;
             energyProduced = energy;
             //Bukkit.getLogger().info("energy "+ energyProduced);
@@ -77,8 +77,8 @@ public class EnergyGenerator extends SlimefunItem implements EnergyNetProvider {
 
 
     @ParametersAreNonnullByDefault
-    public final EnergyGenerator setTime(int rateTicks, int seconds) {
-        this.rate = Math.max(rateTicks, seconds * 2);
+    public final EnergyGenerator setTime(int seconds) {
+        this.time = seconds * 2;
         return this;
     }
 

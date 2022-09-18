@@ -20,7 +20,7 @@ public class WaterNator {
                         SlimefunItems.CARBON, SlimefunItems.ELECTRIC_FURNACE,  SlimefunItems.CARBON,
                         null, SlimefunItems.SMALL_CAPACITOR, null
                 })
-                 .setTime(1, 2)
+                 .setTime(2)
                  .setEnergyOutput(75)
                  .setEnergySource(Material.WATER)
                  .setEnergyCapacity(1000)

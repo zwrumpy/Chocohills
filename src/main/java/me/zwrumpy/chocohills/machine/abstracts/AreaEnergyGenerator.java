@@ -64,10 +64,9 @@ public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvid
     public void tick(@Nonnull Block b) {
         final BlockPosition pos = new BlockPosition(b);
         int progress = generatorProgress.getOrDefault(pos, 0);
-
+        Bukkit.getLogger().info(""+progress);
         if (progress >= this.rate) {
             progress = 0;
-            Bukkit.getLogger().info("afk nator");
             int i = 0;
             for (Entity e: EntityScan.getEntitiesAroundPoint(b.getLocation(), radius)){
                 if (e.getType() == energySource){
@@ -84,8 +83,8 @@ public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvid
 
 
     @ParametersAreNonnullByDefault
-    public final AreaEnergyGenerator setTime(int rateTicks, int seconds) {
-        this.rate = Math.max(rateTicks, seconds * 2);
+    public final AreaEnergyGenerator setTime(int seconds) {
+        this.rate = seconds * 2;
         return this;
     }
 

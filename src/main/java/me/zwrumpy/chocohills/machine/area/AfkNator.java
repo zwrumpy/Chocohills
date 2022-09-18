@@ -21,31 +21,31 @@ public class AfkNator  {
     }
 
     void register(){
-        new AreaEnergyGenerator(ChocoItems.CH_GENERATOR, AFKNATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new AreaEnergyGenerator(ChocoItems.CH_GENERATOR, AFKEINATOR, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
-                        SlimefunItems.LAVA_CRYSTAL, SlimefunItems.STAFF_FIRE, SlimefunItems.LAVA_CRYSTAL,
-                        SlimefunItems.CARBON, SlimefunItems.COAL_GENERATOR,  SlimefunItems.CARBON,
-                        null, SlimefunItems.SMALL_CAPACITOR, null
+                        null, SlimefunItems.LARGE_CAPACITOR, null,
+                        SlimefunItems.CARBON, SlimefunItems.SOLAR_GENERATOR,  SlimefunItems.CARBON,
+                        null, SlimefunItems.LARGE_CAPACITOR, null
                 })
-                .setTime(1, 5)
+                .setTime(5)
                 .setEnergySource(EntityType.PLAYER)
                 .setRadius(5)
-                .setEnergyOutput(500)
-                .setEnergyCapacity(1000)
+                .setEnergyOutput(250)
+                .setEnergyCapacity(2500)
                 .register(ChocoHills.getInstance());
     }
 
-    SlimefunItemStack AFKNATOR = new SlimefunItemStack(
-            "AFKNATOR",
+    SlimefunItemStack AFKEINATOR = new SlimefunItemStack(
+            "AFKEINATOR",
             Material.BOOKSHELF,
-            "&3&lAFKNator",
+            "&3&lAFKeiNator",
             "&7Usage:",
             "&fGenerates energy from ",
             "&fnearby players",
             " ",
             "&7Range: &f2 Blocks ",
             "&7Capacity: &f1000",
-            "&7Rate: &f500 joules * nearby players ",
+            "&7Rate: &f250 joules x nearby players ",
             "&7Time: &f5 Seconds"
     );
 }

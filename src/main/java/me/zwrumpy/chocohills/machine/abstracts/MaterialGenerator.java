@@ -24,7 +24,7 @@ import java.util.Map;
 public class MaterialGenerator extends SlimefunItem {
 
     private static final Map<BlockPosition, Integer> generatorProgress = new HashMap<>();
-    private int rate = 20;
+    private int time = 20;
     private ItemStack item;
     private int itemAmount = 1;
     @ParametersAreNonnullByDefault
@@ -66,7 +66,7 @@ public class MaterialGenerator extends SlimefunItem {
             final BlockPosition pos = new BlockPosition(b);
             int progress = generatorProgress.getOrDefault(pos, 0);
 
-            if (progress >= this.rate) {
+            if (progress >= this.time) {
                 progress = 0;
                 this.item.setAmount(itemAmount);
                 inv.addItem(this.item);
@@ -96,8 +96,8 @@ public class MaterialGenerator extends SlimefunItem {
     }
 
     @ParametersAreNonnullByDefault
-    public final MaterialGenerator setRate(int rateTicks, int seconds) {
-        this.rate = Math.max(rateTicks, seconds * 2);
+    public final MaterialGenerator setTime(int seconds) {
+        this.time =  seconds * 2;
         return this;
     }
 }
