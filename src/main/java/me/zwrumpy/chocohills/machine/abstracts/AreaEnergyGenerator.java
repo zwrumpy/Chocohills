@@ -9,21 +9,16 @@ import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponen
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.zwrumpy.chocohills.util.entities.EntityScan;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvider {
 
@@ -64,11 +59,10 @@ public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvid
     public void tick(@Nonnull Block b) {
         final BlockPosition pos = new BlockPosition(b);
         int progress = generatorProgress.getOrDefault(pos, 0);
-        Bukkit.getLogger().info(""+progress);
         if (progress >= this.rate) {
             progress = 0;
             int i = 0;
-            for (Entity e: EntityScan.getEntitiesAroundPoint(b.getLocation(), radius)){
+            for (Entity e: getEntitiesAroundPoint(b.getLocation(), radius)){
                 if (e.getType() == energySource){
                     i++;
                 }
@@ -127,6 +121,35 @@ public class AreaEnergyGenerator extends SlimefunItem implements EnergyNetProvid
     @Override
     public boolean willExplode(@Nonnull Location l, @Nonnull Config data) {
         return false;
+    }
+
+    public static List<Entity> getEntitiesAroundPoint(Location location, double radius) {
+        List<Entity> entities = new ArrayList<Entity>();
+        World world = location.getWorld();
+
+        // To find chunks we use chunk coordinates (not block coordinates!)
+        int smallX = (int) Math.floor((location.getX() - radius) / 16.0D);
+        int bigX = (int) Math.floor((location.getX() + radius) / 16.0D);
+        int smallZ = (int) Math.floor((location.getZ() - radius) / 16.0D);
+        int bigZ = (int) Math.floor((location.getZ() + radius) / 16.0D);
+
+        for (int x = smallX; x <= bigX; x++) {
+            for (int z = smallZ; z <= bigZ; z++) {
+                if (world.isChunkLoaded(x, z)) {
+                    // Add all entities from this chunk to the list
+                    entities.addAll(Arrays.asList(world.getChunkAt(x, z).getEntities()));
+                }
+            }
+        }
+        // Create an iterator so we can loop through the list while removing entries
+        Iterator<Entity> entityIterator = entities.iterator();
+        while (entityIterator.hasNext()) {
+            // If the entity is outside of the sphere...
+            if (entityIterator.next().getLocation().distanceSquared(location) > radius * radius) {
+                entityIterator.remove();
+            }
+        }
+        return entities;
     }
 }
 

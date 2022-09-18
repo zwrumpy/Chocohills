@@ -38,8 +38,8 @@ public class AfkeiNator  {
             "&3&lAFKeiNator",
             "&7Usage:",
             "&fGenerates and multiplies energy",
-            "from nearby players" +
-            "&",
+            "&ffrom nearby players",
+            " ",
             "&7Range: &f2 Blocks ",
             "&7Capacity: &f1500",
             "&7Rate: &f250 joules x nearby players ",
