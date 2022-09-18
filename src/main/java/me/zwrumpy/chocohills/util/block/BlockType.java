@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.tools.block;
+package me.zwrumpy.chocohills.util.block;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Bukkit;
