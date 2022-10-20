@@ -1,10 +1,10 @@
-package me.zwrumpy.chocohills.machine.area;
+package me.zwrumpy.chocohills.machine.implementation.generator;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.machine.abstracts.AreaEnergyGenerator;
+import me.zwrumpy.chocohills.machine.implementation.generator.AreaEnergyGenerator;
 import me.zwrumpy.chocohills.register.ChocoItems;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -24,7 +24,7 @@ public class AfkeiNator  {
                         SlimefunItems.CARBON, SlimefunItems.ADVANCED_CIRCUIT_BOARD,  SlimefunItems.CARBON,
                         null, new ItemStack(Material.MINECART), null
                 })
-                .setTime(5)
+                .setTime(10)
                 .setEnergySource(EntityType.PLAYER)
                 .setRadius(2)
                 .setEnergyOutput(250)
@@ -43,6 +43,6 @@ public class AfkeiNator  {
             "&7Range: &f2 Blocks ",
             "&7Capacity: &f1500",
             "&7Rate: &f250 joules x nearby players ",
-            "&7Time: &f5 Seconds"
+            "&7Time: &f10 Seconds"
     );
 }

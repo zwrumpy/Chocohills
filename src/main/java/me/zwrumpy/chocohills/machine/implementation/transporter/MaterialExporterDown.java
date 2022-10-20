@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.machine.transporter;
+package me.zwrumpy.chocohills.machine.implementation.transporter;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -13,9 +13,9 @@ import org.bukkit.inventory.ItemStack;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class VanillaTransferDown extends SlimefunItem {
+public class MaterialExporterDown extends SlimefunItem {
     @ParametersAreNonnullByDefault
-    public VanillaTransferDown(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public MaterialExporterDown(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -25,7 +25,7 @@ public class VanillaTransferDown extends SlimefunItem {
             @Override
             @ParametersAreNonnullByDefault
             public void tick(Block b, SlimefunItem sf, Config data) {
-                VanillaTransferDown.this.tick(b);
+                MaterialExporterDown.this.tick(b);
             }
 
             @Override
@@ -36,7 +36,6 @@ public class VanillaTransferDown extends SlimefunItem {
     }
 
     public void tick(@Nonnull Block b) {
-        ItemTransfer.vanillaTransferItemDown(b);
+        ItemTransfer.SlimefunToVanillaDown(b);
     }
 }
-

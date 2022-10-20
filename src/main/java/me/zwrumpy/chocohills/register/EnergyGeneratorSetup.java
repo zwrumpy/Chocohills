@@ -2,9 +2,9 @@ package me.zwrumpy.chocohills.register;
 
 
 import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.machine.area.AfkeiNator;
-import me.zwrumpy.chocohills.machine.generator.RumpyNator;
-import me.zwrumpy.chocohills.machine.generator.WaterNator;
+import me.zwrumpy.chocohills.machine.implementation.generator.AfkeiNator;
+import me.zwrumpy.chocohills.machine.implementation.generator.RumpyNator;
+import me.zwrumpy.chocohills.machine.implementation.generator.WaterNator;
 
 
 public class EnergyGeneratorSetup {

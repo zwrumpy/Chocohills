@@ -4,7 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.machine.transporter.*;
+import me.zwrumpy.chocohills.machine.implementation.transporter.*;
 import org.bukkit.inventory.ItemStack;
 
 public class TransporterSetup {

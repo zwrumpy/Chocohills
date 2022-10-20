@@ -4,9 +4,9 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.zwrumpy.chocohills.ChocoHills;
-import me.zwrumpy.chocohills.machine.EggCooker;
-import me.zwrumpy.chocohills.machine.GreenThumb;
-import me.zwrumpy.chocohills.machine.MenardzSmoker;
+import me.zwrumpy.chocohills.machine.implementation.EggCooker;
+import me.zwrumpy.chocohills.machine.implementation.GreenThumb;
+import me.zwrumpy.chocohills.machine.implementation.MenardzSmoker;
 import org.bukkit.inventory.ItemStack;
 
 public class MachineSetup {

@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.machine.abstracts;
+package me.zwrumpy.chocohills.machine.implementation.generator;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;

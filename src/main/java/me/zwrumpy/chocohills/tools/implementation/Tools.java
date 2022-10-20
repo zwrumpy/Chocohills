@@ -1,4 +1,4 @@
-package me.zwrumpy.chocohills.tools;
+package me.zwrumpy.chocohills.tools.implementation;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;

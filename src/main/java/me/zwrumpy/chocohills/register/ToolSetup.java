@@ -4,7 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.zwrumpy.chocohills.ChocoHills;
 import me.zwrumpy.chocohills.tools.BaamBuilder;
-import me.zwrumpy.chocohills.tools.Tools;
+import me.zwrumpy.chocohills.tools.implementation.Tools;
 import me.zwrumpy.chocohills.tools.Wrench;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
