@@ -23,7 +23,7 @@ public class BaamBuilder {
             "&fInstant Place 5 Blocks ",
             "&fin your hotbar inventory",
             " ",
-            "&7dig or right click blocks"
+            "&7dig or left click blocks"
     );
 
     ItemStack[] recipe = new ItemStack[]{

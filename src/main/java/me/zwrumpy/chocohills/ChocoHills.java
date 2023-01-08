@@ -5,6 +5,7 @@ import me.zwrumpy.chocohills.register.*;
 import me.zwrumpy.chocohills.commands.ToolCommand;
 import me.zwrumpy.chocohills.tools.listener.PickaxeListener;
 import me.zwrumpy.chocohills.tools.listener.TorchInteract;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;

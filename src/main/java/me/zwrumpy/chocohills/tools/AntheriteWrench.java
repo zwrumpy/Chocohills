@@ -9,9 +9,8 @@ import me.zwrumpy.chocohills.tools.listener.WrenchInteract;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class Wrench {
-
-    public Wrench(){
+public class AntheriteWrench {
+    public AntheriteWrench(){
         register(ANTHERITE_WRENCH, recipe);
         registerListener();
     }

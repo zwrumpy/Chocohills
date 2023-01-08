@@ -26,7 +26,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class PickaxeListener implements Listener {
+public class BlastxelListener implements Listener {
     private JavaPlugin plugin;
     private HashMap<Player, BlockFace> blockfaceMap;
     private final BlockSelection selection;
@@ -34,7 +34,7 @@ public class PickaxeListener implements Listener {
     private BlockType blockType;
     private BlockEdit blockEdit;
 
-    public PickaxeListener(JavaPlugin plugin) {
+    public BlastxelListener(JavaPlugin plugin) {
         this.plugin = plugin;
         selection = new BlockSelection();
         blockEdit = new BlockEdit(plugin);

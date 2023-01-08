@@ -13,11 +13,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class TorchInteract implements Listener{
+public class TorchtillasInteract implements Listener{
     private JavaPlugin plugin;
     private int minutes30 = 30 * (60 * 20);
 
-    public TorchInteract(JavaPlugin plugin) {
+    public TorchtillasInteract(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 

@@ -19,8 +19,6 @@ public class MaterialGeneratorSetup {
 
     void setup() {
 
-
-
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.ARFBON, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         null,SlimefunItems.ENERGIZED_CAPACITOR, null,
@@ -78,7 +76,7 @@ public class MaterialGeneratorSetup {
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.DEAN_TAMBAK, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         ChocoItems.CHOCO_CARBON, new ItemStack(Material.DIRT),ChocoItems.CHOCO_CARBON,
-                        new ItemStack(Material.DIRT), ChocoItems.HYPER_CRYSTAL, new ItemStack(Material.DIRT),
+                        new ItemStack(Material.DIRT), ChocoItems.COMPRESSED_CRYSTAL, new ItemStack(Material.DIRT),
                         ChocoItems.AYANSHARD, new ItemStack(Material.DIRT), ChocoItems.AYANSHARD
                 })
                 .setItem(Material.DIRT)
@@ -90,11 +88,11 @@ public class MaterialGeneratorSetup {
         new MaterialGenerator(ChocoItems.CH_GENERATOR, ChocoItems.BAAM_YELO, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[]{
                         ChocoItems.CHOCO_CARBON, new ItemStack(Material.SNOW),ChocoItems.CHOCO_CARBON,
-                        SlimefunItems.REACTOR_COOLANT_CELL, ChocoItems.HYPER_CRYSTAL, SlimefunItems.REACTOR_COOLANT_CELL,
-                        ChocoItems.AYANSHARD, ChocoItems.HYPER_CRYSTAL, ChocoItems.AYANSHARD
+                        SlimefunItems.REACTOR_COOLANT_CELL, ChocoItems.COMPRESSED_CRYSTAL, SlimefunItems.REACTOR_COOLANT_CELL,
+                        ChocoItems.AYANSHARD, ChocoItems.COMPRESSED_CRYSTAL, ChocoItems.AYANSHARD
                 })
                 .setItem(Material.SNOW_BLOCK)
-                .setItemAmount(16)
+                .setItemAmount(32)
                 .setTime(300)
                 .register(addon);
     }

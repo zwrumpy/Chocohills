@@ -50,8 +50,6 @@ public class WrenchInteract implements Listener {
         if (!isSfBlock(b)) return;
         if (!canBreak(p, b)) return;
 
-
-
         BlockBreakEvent event = new BlockBreakEvent(b, p);
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) return;
